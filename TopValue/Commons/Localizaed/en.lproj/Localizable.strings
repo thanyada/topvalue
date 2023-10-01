@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TopValue
+
+  Created by Natthanan Gumyan on 1/10/2566 BE.
+  
+*/
+// TITLE_TABBAR
+"HOME_TABBAR_TITLE" = "หน้าหลัก";
+"CATEGORY_TABBAR_TITLE" = "หมวดหมู่";
+"WISHLIST_TABBAR_TITLE" = "สินค้าโปรด";
+"CART_TABBAR_TITLE" = "รถเข็น";
+"ACCOUNT_TABBAR_TITLE" = "บัญชี";

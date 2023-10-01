@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "Account"; ObjectID = "2kI-wE-8wt"; */
+"2kI-wE-8wt.title" = "Account";
+
+/* Class = "UITabBarItem"; title = "Wishlist"; ObjectID = "39L-3V-36J"; */
+"39L-3V-36J.title" = "Wishlist";
+
+/* Class = "UITabBarItem"; title = "หน้าหลัก"; ObjectID = "Zys-Ui-vQs"; */
+"Zys-Ui-vQs.title" = "หน้าหลัก";
+
+/* Class = "UITabBarItem"; title = "Cart"; ObjectID = "pt8-mx-nqM"; */
+"pt8-mx-nqM.title" = "Cart";
+
+/* Class = "UITabBarItem"; title = "Category"; ObjectID = "vwg-u5-IGi"; */
+"vwg-u5-IGi.title" = "Category";

@@ -4,10 +4,38 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TopValue-Staging.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>TopValue.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FDD6E6BD2AC9499600C61E41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDD6E6D62AC9499600C61E41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDD6E6E02AC9499600C61E41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDD6E6F42AC949BF00C61E41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
