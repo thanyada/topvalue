@@ -31,15 +31,31 @@ class AccountViewController: BaseViewController {
             .subscribe(onNext: { action in
                 switch action {
                     case let .navigationAction(webView, action, handler):
-                        print("navigationAction. action = \(action)")
-                        print("navigationAction. target = \(webView.url?.absoluteString ?? "<nil>")")
+                        if let userAgent = webView.value(forKey: "userAgent") {
+                            print("===========")
+                            print("=====navigationAction======")
+                            print("User Agent: \(userAgent)")
+                            print("===========")
+                        }
+//                        print("navigationAction. action = \(action)")
+//                        print("navigationAction. target = \(webView.url?.absoluteString ?? "<nil>")")
                         handler(WKNavigationActionPolicy.allow)
                     case let .didStart(webView, navigation):
-                        print("start web page. action = \(navigation)")
-                        print("start web page. target = \(webView.url?.absoluteString ?? "<nil>")")
+//                        print("start web page. action = \(navigation)")
+//                        print("start web page. target = \(webView.url?.absoluteString ?? "<nil>")")
+                        if let userAgent = webView.value(forKey: "userAgent") {
+                            print("=====didStart======")
+                            print("User Agent: \(userAgent)")
+                            print("===========")
+                        }
                     case let .didFinish(webView, navigation):
-                        print("end web page. action = \(navigation)")
-                        print("end web page. target = \(webView.url?.absoluteString ?? "<nil>")")
+//                        print("end web page. action = \(navigation)")
+//                        print("end web page. target = \(webView.url?.absoluteString ?? "<nil>")")
+                        if let userAgent = webView.value(forKey: "userAgent") {
+                            print("=====didFinish======")
+                            print("User Agent: \(userAgent)")
+                            print("===========")
+                        }
                 }
             })
             .disposed(by: disposeBag)

@@ -6,11 +6,26 @@
 //
 
 import UIKit
-
+import RxCocoa
+import RxSwift
 class MainViewController: UITabBarController {
 
     @IBOutlet weak var mainTabbar: UITabBar!
-    private let HEIGHT_TAB_BAR: CGFloat = 112
+    private var interactor: MainInteractor?
+    private var viewModel: MainViewModel?
+    private var disposeBag: DisposeBag = DisposeBag()
+    
+    private struct Constants {
+        static let heightTapBar: CGFloat = BaseTools.getTabbarSaveArea(condition1: 112, condition2: 68)
+        static let badgeYPosition: CGFloat = BaseTools.getTabbarSaveArea(condition1: 20, condition2: 15)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        viewModel = MainViewModel()
+        guard let vm = viewModel else { return }
+        interactor = MainInteractor(viewModel: vm)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,22 +33,58 @@ class MainViewController: UITabBarController {
         setupTิabbarTitle()
         setTabbarImage()
         setFont()
+        guard let vm = viewModel else { return }
+        bind(vm, disposeBag)
+        fetBadgeCartCouting()
+        fetBadgeWishListCouting()
+        setupBinding()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         var tabFrame = self.tabBar.frame
-        tabFrame.size.height = HEIGHT_TAB_BAR
-        tabFrame.origin.y = self.view.frame.size.height - HEIGHT_TAB_BAR
+        tabFrame.size.height = Constants.heightTapBar
+        tabFrame.origin.y = self.view.frame.size.height - Constants.heightTapBar
         self.mainTabbar.frame = tabFrame
-        
-        self.addBadge(index: 3, value: "10+", color: UIColor.Reds.NormalRedV1, font: R.font.sukhumvitSetBold(size: 12.0)!)
     }
     
     func itemWidthForTabBar(_ tabBar: UITabBar) -> CGFloat {
         return tabBar.frame.width / CGFloat(tabBar.items?.count ?? 1)
     }
-
+    
+    
+    private func setupBinding() {
+        viewModel?
+            .badgeCartModel
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] model in
+                guard let self = self, let badgeCardCount = model?.badgeCartCouting, badgeCardCount != "" else { return }
+                self.addBadge(
+                    index: 3,
+                    value: badgeCardCount,
+                    color: UIColor.Reds.NormalRedV1,
+                    font: R.font.sukhumvitSetBold(size: 12.0)!,
+                    badgeYPosition: Constants.badgeYPosition
+                )
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel?
+            .BadgeWishlistModel
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] model in
+                guard let self = self, let badgeWishlistCount = model?.badgeWishlistCouting, badgeWishlistCount != "" else { return }
+                self.addBadge(index: 2,
+                              value: badgeWishlistCount,
+                              color: UIColor.Reds.NormalRedV1,
+                              font: R.font.sukhumvitSetBold(size: 12.0)!,
+                              badgeYPosition: Constants.badgeYPosition
+                )
+            })
+            .disposed(by: self.disposeBag)
+        
+    }
+    
     private func setupBase() {
         mainTabbar.backgroundColor = .white
         mainTabbar.tintAdjustmentMode = .normal
@@ -68,62 +119,18 @@ class MainViewController: UITabBarController {
             item.setTitleTextAttributes([NSAttributedString.Key.font: normalFont, NSAttributedString.Key.foregroundColor: UIColor.Grays.NormalGrayV1], for: .normal)
             item.setTitleTextAttributes([NSAttributedString.Key.font: selectedFont, NSAttributedString.Key.foregroundColor: UIColor.Blacks.NormalBlackV1], for: .selected)
         }
-//        mainTabbar.items?[3].badgeValue = "0"
-       
-    }
-    
-    
-}
-extension UITabBarController {
-    
-    func setBadges(badgeValues: [Int]) {
-
-        var labelExistsForIndex = [Bool]()
-
-        for _ in badgeValues {
-            labelExistsForIndex.append(false)
-        }
-
-        for view in self.tabBar.subviews where view is PGTabBadge {
-            let badgeView = view as! PGTabBadge
-            let index = badgeView.tag
-            
-            if badgeValues[index] == 0 {
-                badgeView.removeFromSuperview()
-            }
-            
-            labelExistsForIndex[index] = true
-            badgeView.text = String(badgeValues[index])
-        }
-
-        for i in 0...(labelExistsForIndex.count - 1) where !labelExistsForIndex[i] && (badgeValues[i] > 0) {
-            addBadge(index: i, value: "\(badgeValues[i])", color: .red, font: UIFont(name: "Helvetica-Light", size: 11)!)
-        }
-
-    }
-
-    func addBadge(index: Int, value: String, color: UIColor, font: UIFont) {
-        let itemPosition = CGFloat(index + 1)
-        let itemWidth: CGFloat = tabBar.frame.width / CGFloat(tabBar.items!.count)
-        let bgColor = color
-        let xOffset: CGFloat = 10
-        let yOffset: CGFloat = 0
-        let badgeView = PGTabBadge()
-        badgeView.frame.size =  CGSize(width: 26, height: 16)
-        badgeView.center = CGPoint(x: (itemWidth * itemPosition) - (itemWidth / 2) + xOffset, y: 20 + yOffset)
-        badgeView.layer.cornerRadius = 6.0
-        badgeView.clipsToBounds = true
-        badgeView.textColor = UIColor.white
-        badgeView.textAlignment = .center
-        badgeView.font = font
-        badgeView.text = value
-        badgeView.backgroundColor = bgColor
-        badgeView.tag = index
-        badgeView.layer.borderWidth = 1
-        badgeView.layer.borderColor = UIColor.white.cgColor
-        tabBar.addSubview(badgeView)
-
     }
 }
+
+// MARK - service request
+extension MainViewController {
+    private func fetBadgeCartCouting() {
+        interactor?.fetchBadgeCartModel()
+            .disposed(by: self.disposeBag)
+    }
     
-class PGTabBadge: UILabel { }
+    private func fetBadgeWishListCouting() {
+        interactor?.fetchBadgeWishlistModel()
+            .disposed(by: self.disposeBag)
+    }
+}
