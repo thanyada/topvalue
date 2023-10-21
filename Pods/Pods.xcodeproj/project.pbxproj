@@ -2741,20 +2741,6 @@
 			remoteGlobalIDString = 7AD0C6DCDC9CEC8A3C7C10C7FEE07BE6;
 			remoteInfo = RxCocoa;
 		};
-		FD1743CF2AE36E470049E21F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD1743CA2AE36E470049E21F /* TopValueRepository.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FD1743B02AE36E3B0049E21F;
-			remoteInfo = TopValueRepository;
-		};
-		FD1743D12AE36E470049E21F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD1743CA2AE36E470049E21F /* TopValueRepository.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FD1743BA2AE36E3B0049E21F;
-			remoteInfo = TopValueRepositoryTests;
-		};
 		FDFA328688454C76BB0A81411B706046 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -4519,7 +4505,6 @@
 		FCC3C5FF0169A79C7479C06F20547F11 /* GULLoggerCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULLoggerCodes.h; path = GoogleUtilities/Common/GULLoggerCodes.h; sourceTree = "<group>"; };
 		FCF3DB15557E8D4E2BEE307E2358B5F3 /* Differentiator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Differentiator-Info.plist"; sourceTree = "<group>"; };
 		FD0171CD8D279CC5A965FAD1F8D45621 /* TakeLast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeLast.swift; path = RxSwift/Observables/TakeLast.swift; sourceTree = "<group>"; };
-		FD1743CA2AE36E470049E21F /* TopValueRepository.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TopValueRepository.xcodeproj; path = ../TopValueRepository/TopValueRepository.xcodeproj; sourceTree = "<group>"; };
 		FD38AC7F34EF26E57F93E2FD49CBCB86 /* Completable+AndThen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Completable+AndThen.swift"; path = "RxSwift/Traits/Completable+AndThen.swift"; sourceTree = "<group>"; };
 		FD44D8CD2F329EA3FE26F5BAB415ECFD /* FIRCLSDwarfUnwind.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = FIRCLSDwarfUnwind.c; path = Crashlytics/Crashlytics/Unwind/Dwarf/FIRCLSDwarfUnwind.c; sourceTree = "<group>"; };
 		FD9B61249BAB407415D9A61C693F7782 /* FBLPromise+Always.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBLPromise+Always.h"; path = "Sources/FBLPromises/include/FBLPromise+Always.h"; sourceTree = "<group>"; };
@@ -6562,7 +6547,6 @@
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
-				FD1743CA2AE36E470049E21F /* TopValueRepository.xcodeproj */,
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				2FE445AD883B9ABD3E0241A05A5B79FD /* Frameworks */,
 				F292947F6593B9E3CFC39A9105571824 /* Pods */,
@@ -7397,15 +7381,6 @@
 				D2630D6D0A3A19C86D2ED30E990DF1B4 /* Support Files */,
 			);
 			path = FirebaseMessaging;
-			sourceTree = "<group>";
-		};
-		FD1743CB2AE36E470049E21F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD1743D02AE36E470049E21F /* TopValueRepository.framework */,
-				FD1743D22AE36E470049E21F /* TopValueRepositoryTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -9043,12 +9018,6 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = D1530EBD583830326721C91D3A078987 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FD1743CB2AE36E470049E21F /* Products */;
-					ProjectRef = FD1743CA2AE36E470049E21F /* TopValueRepository.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
@@ -9091,23 +9060,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FD1743D02AE36E470049E21F /* TopValueRepository.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = TopValueRepository.framework;
-			remoteRef = FD1743CF2AE36E470049E21F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FD1743D22AE36E470049E21F /* TopValueRepositoryTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TopValueRepositoryTests.xctest;
-			remoteRef = FD1743D12AE36E470049E21F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		010B138FF8EA66E23106C031D9B68AFE /* Resources */ = {

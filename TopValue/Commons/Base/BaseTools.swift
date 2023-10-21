@@ -33,3 +33,18 @@ class BaseTools {
         return condition1
     }
 }
+
+extension UIApplication {
+    func openAppStore(for appID: String) {
+        let appStoreURL = "https://itunes.apple.com/app/\(appID)"
+        guard let url = URL(string: appStoreURL) else {
+            return
+        }
+
+        DispatchQueue.main.async {
+            if self.canOpenURL(url) {
+                self.open(url)
+            }
+        }
+    }
+}

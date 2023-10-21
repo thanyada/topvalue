@@ -3,4 +3,102 @@
    uuid = "D712B2B1-BD53-42ED-8286-99221C48FB75"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04A81A35-445A-4C35-BDBD-CDC4D44D38EA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/Domains/Networks/ForceUpdateChecker/ForceUpdateChecker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "check()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DB11BCC-713A-4556-8FF8-6931C937D1A6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/Domains/Networks/ForceUpdateChecker/ForceUpdateChecker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getAppVersion()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70B8C65A-6B7D-4A11-A42F-F9151D26E68F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/Domains/Networks/ForceUpdateChecker/ForceUpdateChecker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "check()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70B8C65A-6B7D-4A11-A42F-F9151D26E68F - d22dca1cbb3656d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue_Staging.ForceUpdateChecker.check() -&gt; TopValue_Staging.ForceUpdateChecker.UpdateStatus"
+                  moduleName = "TopValue-Staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/Domains/Networks/ForceUpdateChecker/ForceUpdateChecker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "70B8C65A-6B7D-4A11-A42F-F9151D26E68F - d22dca1cbb3656d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue_Staging.ForceUpdateChecker.check() -&gt; TopValue_Staging.ForceUpdateChecker.UpdateStatus"
+                  moduleName = "TopValue-Staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/Domains/Networks/ForceUpdateChecker/ForceUpdateChecker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "448">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "904D6504-DAA0-47BB-9DEB-05E43BF92112"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/Domains/Networks/ForceUpdateChecker/ForceUpdateChecker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "check()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

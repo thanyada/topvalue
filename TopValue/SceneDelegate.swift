@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FirebaseRemoteConfig
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        verifyVersion()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -53,3 +54,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    
+    func setupRemoteConfig(){
+        let remoteConfig = RemoteConfig.remoteConfig()
+
+        let defaults : [String : Any] = [
+            ForceUpdateChecker.IS_FORCE_UPDATE_REQUIRED : false,
+            ForceUpdateChecker.FORCE_UPDATE_CURRENT_VERSION : "1.0.0(1)",
+            ForceUpdateChecker.FORCE_UPDATE_STORE_URL : "https://itunes.apple.com/br/app/myapp/id1234567"
+        ]
+
+        let expirationDuration = 0
+
+        remoteConfig.setDefaults(defaults as? [String : NSObject])
+
+        remoteConfig.fetch(withExpirationDuration: TimeInterval(expirationDuration)) { (status, error) in
+            if status == .success {
+                remoteConfig.activate()
+            } else {
+                print("Error: \(error?.localizedDescription ?? "No error available.")")
+            }
+        }
+    }
+
+    func goToAppStore(action: UIAlertAction) {
+        let appId = "1234567"
+        UIApplication.shared.openAppStore(for: appId)
+    }
+
+    func verifyVersion() {
+        setupRemoteConfig()
+
+        if ForceUpdateChecker().check() == .shouldUpdate {
+            let alert = UIAlertController(title: "New version avaiable",
+                                          message: "There are new features avaiable, please update your app",
+                                          preferredStyle: .alert)
+            let action = UIAlertAction(title: "Update", style: .default, handler: goToAppStore)
+            alert.addAction(action)
+            window?.rootViewController?.present(alert, animated: true)
+        }
+    }
+}
