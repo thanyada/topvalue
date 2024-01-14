@@ -26,5 +26,17 @@
 		<key>host</key>
 		<string>api.topvalue.asia/rest/V1</string>
 	</dict>
+    <key>GIDClientID</key>
+    <string>801102335914-rbalqer7ngqvi52gj2kcn4n1r3e17vdk.apps.googleusercontent.com</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.801102335914-rbalqer7ngqvi52gj2kcn4n1r3e17vdk</string>
+        </array>
+      </dict>
+    </array>
 </dict>
+
 </plist>

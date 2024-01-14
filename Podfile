@@ -24,6 +24,7 @@ def network_lib
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'Firebase/Crashlytics'
+  pod 'GoogleSignIn'
 end
 
 def security_pods

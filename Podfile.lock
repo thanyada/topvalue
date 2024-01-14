@@ -3,6 +3,12 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - AppAuth (1.6.2):
+    - AppAuth/Core (= 1.6.2)
+    - AppAuth/ExternalUserAgent (= 1.6.2)
+  - AppAuth/Core (1.6.2)
+  - AppAuth/ExternalUserAgent (1.6.2):
+    - AppAuth/Core
   - Differentiator (4.0.1)
   - Firebase/Analytics (9.6.0):
     - Firebase/Core
@@ -111,6 +117,10 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleSignIn (7.0.0):
+    - AppAuth (~> 1.5)
+    - GTMAppAuth (< 3.0, >= 1.3)
+    - GTMSessionFetcher/Core (< 4.0, >= 1.1)
   - GoogleUtilities/AppDelegateSwizzler (7.11.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -130,6 +140,9 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.11.0):
     - GoogleUtilities/Logger
+  - GTMAppAuth (2.0.0):
+    - AppAuth/Core (~> 1.6)
+    - GTMSessionFetcher/Core (< 4.0, >= 1.5)
   - GTMSessionFetcher/Core (2.3.0)
   - IOSSecuritySuite (1.9.6)
   - IQKeyboardManagerSwift (6.5.11)
@@ -168,6 +181,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - Firebase/Messaging
   - Firebase/RemoteConfig
+  - GoogleSignIn
   - IOSSecuritySuite (~> 1.9.6)
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -184,6 +198,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireObjectMapper
+    - AppAuth
     - Differentiator
     - Firebase
     - FirebaseABTesting
@@ -198,7 +213,9 @@ SPEC REPOS:
     - FirebaseRemoteConfig
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
+    - GTMAppAuth
     - GTMSessionFetcher
     - IOSSecuritySuite
     - IQKeyboardManagerSwift
@@ -219,6 +236,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Firebase: 5ae8b7cf8efce559a653aef0ad95bab3f427c351
   FirebaseABTesting: 61826730ce9eee8781ba99a2b3420e9bce148dc9
@@ -233,7 +251,9 @@ SPEC CHECKSUMS:
   FirebaseRemoteConfig: ee09d77a7d7c7e31da6a0d1cf956cd611c85609c
   GoogleAppMeasurement: 6de2b1a69e4326eb82ee05d138f6a5cb7311bcb1
   GoogleDataTransport: ea169759df570f4e37bdee1623ec32a7e64e67c4
+  GoogleSignIn: b232380cf495a429b8095d3178a8d5855b42e842
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
+  GTMAppAuth: 99fb010047ba3973b7026e45393f51f27ab965ae
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
   IOSSecuritySuite: 7e7e632bcaf3067cd7ee8b698733417e92e65fa7
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
@@ -251,6 +271,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   TrustKit: 7858ea59d0e226b1457b2e9cc8b95d77ab21d471
 
-PODFILE CHECKSUM: 154a88e45613986a78ac575c6ea3e2d6d2a82ada
+PODFILE CHECKSUM: 13235107d8583aaa6ffbdbaf620baaf73db33d27
 
 COCOAPODS: 1.12.1
