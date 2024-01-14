@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 class HomeViewController: BaseViewController {
     @IBOutlet private weak var webContainner: UIView!
-    private var path: String = "https://topvalue.com/"
+    private var path: String = ApplicationFlag.homePagePath
     
     override func viewDidLoad() {
         super.viewDidLoad()

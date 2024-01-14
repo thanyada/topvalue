@@ -13,13 +13,18 @@ import SnapKit
 import WebKit
 
 class BaseViewController: UIViewController {
+    
     lazy var webView: WKWebView = {
         let configuration = WKWebViewConfiguration()
+//        configuration.applicationNameForUserAgent = "Version/8.0.2 Safari/600.2.5"
         let webView = WKWebView(frame: view.bounds, configuration: configuration)
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return webView
     }()
+    
     var disposeBag: DisposeBag = DisposeBag()
+    var viewModel = BaseViewModel()
+    var actionType: BaseViewModel.ActionType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,4 +40,29 @@ class BaseViewController: UIViewController {
         let request = URLRequest(url: url)
         webView.load(request)
     }
+    
+    func navigateToView(type: BaseViewModel.ActionType) {
+        self.actionType = type
+        guard actionType != nil else { return }
+        switch actionType {
+            case .clickHomeButton:
+                viewModel.navigateToHome()
+                
+            case .clickCartButton:
+                viewModel.navigateToCart()
+                
+            case .clickWishListButton:
+                viewModel.navigateToWishList()
+                
+            case .clickCategoryButton:
+                viewModel.navigateToCategory()
+                
+            case .clickAccountButton:
+                viewModel.navigateToAccount()
+                
+            case .none:
+                break
+        }
+    }
+
 }

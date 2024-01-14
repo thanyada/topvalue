@@ -11,7 +11,7 @@ import WebKit
 class CartViewController: BaseViewController {
 
     @IBOutlet private weak var webContainner: UIView!
-    var path: String = "https://topvalue.com/customer/cart/products"
+    var path: String = ApplicationFlag.cartPath
     
     override func viewDidLoad() {
         super.viewDidLoad()

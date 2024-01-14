@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 class MainViewController: UITabBarController {
 
-    @IBOutlet weak var mainTabbar: UITabBar!
+    @IBOutlet weak var mainTabbar: CustomTabBar!
     private var interactor: MainInteractor?
     private var viewModel: MainViewModel?
     private var disposeBag: DisposeBag = DisposeBag()
@@ -86,6 +86,8 @@ class MainViewController: UITabBarController {
     }
     
     private func setupBase() {
+        CustomTabBar.appearance().shadowImage = UIImage()
+        CustomTabBar.appearance().backgroundImage = UIImage()
         mainTabbar.backgroundColor = .white
         mainTabbar.tintAdjustmentMode = .normal
         mainTabbar.itemPositioning = .centered
@@ -134,3 +136,4 @@ extension MainViewController {
             .disposed(by: self.disposeBag)
     }
 }
+

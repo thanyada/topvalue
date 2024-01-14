@@ -11,7 +11,7 @@ import WebKit
 class CategoryViewController: BaseViewController {
 
     @IBOutlet private weak var webContainner: UIView!
-    private var path: String = "https://topvalue.com/m/categories"
+    private var path: String = ApplicationFlag.categoryPath
     
     override func viewDidLoad() {
         super.viewDidLoad()

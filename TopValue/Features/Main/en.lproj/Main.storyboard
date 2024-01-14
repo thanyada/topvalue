@@ -11,7 +11,7 @@
         <scene sceneID="0DT-Rx-wfA">
             <objects>
                 <tabBarController id="N7w-6y-cPB" customClass="MainViewController" customModule="TopValue" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" itemSpacing="0.0" id="zKw-rt-rnD">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" itemSpacing="0.0" id="zKw-rt-rnD" customClass="CustomTabBar" customModule="TopValue" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

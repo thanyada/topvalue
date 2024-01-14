@@ -14,12 +14,12 @@ class RxServiceManager {
 
     static let shared = RxServiceManager()
 
-    private let sessionManager: SessionManager
+    private let sessionManager: Session
 
     private init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
-        self.sessionManager = SessionManager(configuration: configuration)
+        self.sessionManager = Session(configuration: configuration)
     }
 
     func request<T: Mappable>(_ url: URLConvertible,

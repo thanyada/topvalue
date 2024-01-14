@@ -11,7 +11,7 @@ import WebKit
 class WishlistViewController: BaseViewController {
 
     @IBOutlet private weak var webContainner: UIView!
-    var path: String = "https://topvalue.com/customer/account/wishlist"
+    var path: String = ApplicationFlag.wishListPath
     
     override func viewDidLoad() {
         super.viewDidLoad()
