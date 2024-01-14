@@ -36,6 +36,8 @@
 		FD17440A2AE3C4DC0049E21F /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1744082AE3C4DC0049E21F /* BundleExtension.swift */; };
 		FD17440D2AE3C54A0049E21F /* ForceUpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD17440C2AE3C54A0049E21F /* ForceUpdateChecker.swift */; };
 		FD17440E2AE3C54B0049E21F /* ForceUpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD17440C2AE3C54A0049E21F /* ForceUpdateChecker.swift */; };
+		FD4413AD2B53FFAB001FD830 /* Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDD6E7032AC949BF00C61E41 /* Staging-Info.plist */; };
+		FD4413B22B540BC3001FD830 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4413A92B53FE66001FD830 /* GoogleService-Info.plist */; };
 		FD494BEF2B52C6EA0065FA34 /* AccountViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */; };
 		FD494BF02B52C6EA0065FA34 /* AccountViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */; };
 		FD494BF22B52CC690065FA34 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF12B52CC690065FA34 /* AccountViewModel.swift */; };
@@ -152,6 +154,7 @@
 		FD1744062AE3C1BF0049E21F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FD1744082AE3C4DC0049E21F /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		FD17440C2AE3C54A0049E21F /* ForceUpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceUpdateChecker.swift; sourceTree = "<group>"; };
+		FD4413A92B53FE66001FD830 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD494BED2B529B5D0065FA34 /* TopValueRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopValueRelease.entitlements; sourceTree = "<group>"; };
 		FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewRouter.swift; sourceTree = "<group>"; };
 		FD494BF12B52CC690065FA34 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -479,6 +482,7 @@
 		FD1744042AE3C1850049E21F /* Production */ = {
 			isa = PBXGroup;
 			children = (
+				FD4413A92B53FE66001FD830 /* GoogleService-Info.plist */,
 				FDD6E6D22AC9499600C61E41 /* Info.plist */,
 			);
 			path = Production;
@@ -889,6 +893,7 @@
 				FDC0647A2AC97BB200DF04F8 /* Account.storyboard in Resources */,
 				FDC064872AC97DFC00DF04F8 /* Cart.storyboard in Resources */,
 				FDD6E6C92AC9499600C61E41 /* Main.storyboard in Resources */,
+				FD4413B22B540BC3001FD830 /* GoogleService-Info.plist in Resources */,
 				FDD6E7702AC950E600C61E41 /* SukhumvitSet-Light.ttf in Resources */,
 				FDD6E76A2AC950E600C61E41 /* SukhumvitSet-SemiBold.ttf in Resources */,
 				FD98D9FD2AC9B20100445B20 /* Localizable.strings in Resources */,
@@ -923,6 +928,7 @@
 				FDC064672AC9799400DF04F8 /* Category.storyboard in Resources */,
 				FDD6E6FD2AC949BF00C61E41 /* Assets.xcassets in Resources */,
 				FDC0647B2AC97BB200DF04F8 /* Account.storyboard in Resources */,
+				FD4413AD2B53FFAB001FD830 /* Staging-Info.plist in Resources */,
 				FDC064882AC97DFC00DF04F8 /* Cart.storyboard in Resources */,
 				FDD6E6FE2AC949BF00C61E41 /* Main.storyboard in Resources */,
 				FDD6E7712AC950E600C61E41 /* SukhumvitSet-Light.ttf in Resources */,
@@ -1380,7 +1386,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8G39H295D3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TopValue/Info.plist;
+				INFOPLIST_FILE = TopValue/Production/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1413,7 +1419,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8G39H295D3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TopValue/Info.plist;
+				INFOPLIST_FILE = TopValue/Production/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1537,7 +1543,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DSTAGING";
-				PRODUCT_BUNDLE_IDENTIFIER = com.topValue.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = com.topValue.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1571,7 +1577,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_SWIFT_FLAGS = "-DSTAGING";
-				PRODUCT_BUNDLE_IDENTIFIER = com.topvalue.staging;
+				PRODUCT_BUNDLE_IDENTIFIER = com.topvalue.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

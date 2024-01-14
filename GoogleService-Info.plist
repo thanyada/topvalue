@@ -2,18 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>268646396554-5frkrrnnvdlhk3qftbn06gomllqfsghi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.268646396554-5frkrrnnvdlhk3qftbn06gomllqfsghi</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>268646396554-i7m1ep124di701l9clsgcad90sv0mvie.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAT-ckQwmTVgxttGeE4xYTI5eAFdS-JdMQ</string>
+	<string>AIzaSyBAlhgpfDBYm7rWThywirahs3QOCQfvosQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>423168091659</string>
+	<string>268646396554</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.topValue.staging</string>
+	<string>com.topvalue.dev</string>
 	<key>PROJECT_ID</key>
-	<string>mocktvteststaging</string>
+	<string>topvalue-staging</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mocktvteststaging.appspot.com</string>
+	<string>topvalue-staging.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:423168091659:ios:39d6e7674457f32892090e</string>
+	<string>1:268646396554:ios:16ed377fac81c8b5ac3373</string>
+	<key>DATABASE_URL</key>
+	<string>https://topvalue-staging-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
