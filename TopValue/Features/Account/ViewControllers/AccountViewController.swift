@@ -28,40 +28,54 @@ class AccountViewController: BaseViewController{
     }
     
     private func setupView() {
+        let configuration = WKWebViewConfiguration()
+        let userContentController = WKUserContentController()
+        userContentController.add(self, name: "receiveTokenLogin")
+        userContentController.add(self, name: "clickLoginButton")
+        configuration.userContentController = userContentController
+        configuration.applicationNameForUserAgent = "Version/8.0.2 Safari/600.2.5"
+        let webView = WKWebView(frame: view.bounds, configuration: configuration)
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.webView = webView
         self.webContainner.addSubview(webView)
         self.webView.snp.makeConstraints { make in
             make.top.right.bottom.left.equalToSuperview()
         }
-        let loginGoogle = UIButton(frame: .zero)
-        loginGoogle.backgroundColor = .blue
-        loginGoogle.setTitle("Google", for: .normal)
-        loginGoogle.layer.cornerRadius = 10.0
-        self.webContainner.addSubview(loginGoogle)
-        loginGoogle.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.height.equalTo(50)
-            make.width.equalTo(200)
-        }
-        loginGoogle.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
-        
-        
-        let loginApple = ASAuthorizationAppleIDButton(frame: .zero)
-        loginApple.layer.cornerRadius = 10.0
-        self.webContainner.addSubview(loginApple)
-        loginApple.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(100)
-            make.height.equalTo(50)
-            make.width.equalTo(200)
-        }
-        loginApple.addTarget(self, action: #selector(signInWithApple), for: .touchUpInside)
+//        let loginGoogle = UIButton(frame: .zero)
+//        loginGoogle.backgroundColor = .blue
+//        loginGoogle.setTitle("Google", for: .normal)
+//        loginGoogle.layer.cornerRadius = 10.0
+//        self.webContainner.addSubview(loginGoogle)
+//        loginGoogle.snp.makeConstraints { make in
+//            make.center.equalToSuperview()
+//            make.height.equalTo(50)
+//            make.width.equalTo(200)
+//        }
+//        loginGoogle.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
+//
+//
+//        let loginApple = ASAuthorizationAppleIDButton(frame: .zero)
+//        loginApple.layer.cornerRadius = 10.0
+//        self.webContainner.addSubview(loginApple)
+//        loginApple.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.centerY.equalToSuperview().offset(100)
+//            make.height.equalTo(50)
+//            make.width.equalTo(200)
+//        }
+//        loginApple.addTarget(self, action: #selector(signInWithApple), for: .touchUpInside)
     }
     
     
     private func createBinding() {
-        let userContentController = WKUserContentController()
-        userContentController.add(self, name: "receiveTokenLogin")
-        userContentController.add(self, name: "clickLoginButton")
+//        let configuration = WKWebViewConfiguration()
+//        let userContentController = WKUserContentController()
+//        userContentController.add(self, name: "receiveTokenLogin")
+//        userContentController.add(self, name: "clickLoginButton")
+//        configuration.userContentController = userContentController
+//        let webView = WKWebView(frame: view.bounds, configuration: configuration)
+//        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        self.webView = webView
     }
     
     @objc private func signInWithGoogle() {
@@ -121,7 +135,7 @@ extension AccountViewController: ASAuthorizationControllerDelegate, ASAuthorizat
         return view.window!
     }
     
-    
+   
 }
 
 extension AccountViewController: WKScriptMessageHandler {

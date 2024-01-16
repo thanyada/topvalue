@@ -3,4 +3,54 @@
    uuid = "D712B2B1-BD53-42ED-8286-99221C48FB75"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6539773-6B7B-4F6A-9D0B-54A1394843ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/Features/Account/ViewControllers/AccountViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C6539773-6B7B-4F6A-9D0B-54A1394843ED - ff7d0e22aca0feaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue_Staging.AccountViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
+                  moduleName = "TopValue-Staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/Features/Account/ViewControllers/AccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "C6539773-6B7B-4F6A-9D0B-54A1394843ED - ff7d0e22aca0feaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue_Staging.AccountViewController.userContentController(_: __C.WKUserContentController, didReceive: __C.WKScriptMessage) -&gt; ()"
+                  moduleName = "TopValue-Staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/Features/Account/ViewControllers/AccountViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
