@@ -10,7 +10,7 @@ struct ApplicationFlag {
     private init() {}
 
     #if DEBUG
-    static let accountPath = "https://topvalue.asia/customer/account/login"
+    static let accountPath = "https://topvalue.asia/customer/account"
     static let cartPath = "https://topvalue.asia/customer/cart/products"
     static let wishListPath = "https://topvalue.asia/customer/account/wishlist"
     static let categoryPath = "https://topvalue.asia/m/categories"

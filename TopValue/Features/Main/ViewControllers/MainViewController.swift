@@ -8,7 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
-class MainViewController: UITabBarController {
+class MainViewController: UITabBarController, UITabBarControllerDelegate {
 
     @IBOutlet weak var mainTabbar: CustomTabBar!
     private var interactor: MainInteractor?
@@ -29,6 +29,7 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         setupBase()
         setupTิabbarTitle()
         setTabbarImage()
@@ -120,6 +121,13 @@ class MainViewController: UITabBarController {
         for item in items  {
             item.setTitleTextAttributes([NSAttributedString.Key.font: normalFont, NSAttributedString.Key.foregroundColor: UIColor.Grays.NormalGrayV1], for: .normal)
             item.setTitleTextAttributes([NSAttributedString.Key.font: selectedFont, NSAttributedString.Key.foregroundColor: UIColor.Blacks.NormalBlackV1], for: .selected)
+        }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let index = tabBarController.viewControllers?.firstIndex(of: viewController) {
+            let userInfo: [String: Any] = ["selectedIndex": index]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
         }
     }
 }

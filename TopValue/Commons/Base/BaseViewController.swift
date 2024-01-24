@@ -14,13 +14,13 @@ import WebKit
 
 class BaseViewController: UIViewController {
     
-    lazy var webView: WKWebView = {
-        let configuration = WKWebViewConfiguration()
+//    var webView: WKWebView {
+//        let configuration = WKWebViewConfiguration()
 //        configuration.applicationNameForUserAgent = "Version/8.0.2 Safari/600.2.5"
-        let webView = WKWebView(frame: view.bounds, configuration: configuration)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return webView
-    }()
+//        let webView = WKWebView(frame: view.bounds, configuration: configuration)
+//        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        return webView
+//    }
     
     var disposeBag: DisposeBag = DisposeBag()
     var viewModel = BaseViewModel()
@@ -31,15 +31,15 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
-    func config(request: String) {
-        webView.isOpaque = false
-        webView.scrollView.bounces = false
-        webView.scrollView.showsHorizontalScrollIndicator = false
-        webView.scrollView.showsVerticalScrollIndicator = true
-        guard let url = URL(string: request) else { return }
-        let request = URLRequest(url: url)
-        webView.load(request)
-    }
+//    func config(request: String) {
+//        webView.isOpaque = false
+//        webView.scrollView.bounces = false
+//        webView.scrollView.showsHorizontalScrollIndicator = false
+//        webView.scrollView.showsVerticalScrollIndicator = true
+//        guard let url = URL(string: request) else { return }
+//        let request = URLRequest(url: url)
+//        webView.load(request)
+//    }
     
     func navigateToView(type: BaseViewModel.ActionType) {
         self.actionType = type

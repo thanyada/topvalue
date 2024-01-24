@@ -17,10 +17,11 @@ final class MainInteractor {
     }
 
     func fetchBadgeCartModel() -> Disposable  {
-//        let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/wishlist"
-        let apiURL = "http://127.0.0.1:3658/m1/404190-0-default/pet"
+        let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/wishlist"
+//        let apiURL = "api.topvalue.asia/rest/V1/carts/mine/totals?fields=items_qty"
+        let userLoginToken = UserDefaults.standard.string(forKey: "userLoginToken")
         viewModel?.isCallingApiEnd.accept(false)
-        return serviceManager.request(apiURL, method: .get, headers: ["Authorization": "Token"])
+        return serviceManager.request(apiURL, method: .get, headers: ["Authorization": userLoginToken ?? ""])
             .subscribe(onNext: { (badgeCartModel: BadgeCartModel) in
                 print("BadgeCartModel: \(badgeCartModel.badgeCartCouting)")
                 self.viewModel?.isCallingApiEnd.accept(true)
@@ -33,10 +34,11 @@ final class MainInteractor {
     }
     
     func fetchBadgeWishlistModel() -> Disposable {
-//        let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/carts/mine/totals?fields=total_segments"
-        let apiURL = "http://127.0.0.1:3658/m1/404190-0-default/pet"
+        let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/carts/mine/totals?fields=total_segments"
+//        let apiURL = "api.topvalue.asia/rest/V1/wishlist?fields=total_count"
         viewModel?.isCallingApiEnd.accept(false)
-        return serviceManager.request(apiURL, method: .get, headers: ["Authorization": "Token"])
+        let userLoginToken = UserDefaults.standard.string(forKey: "userLoginToken")
+        return serviceManager.request(apiURL, method: .get, headers: ["Authorization": userLoginToken ?? ""])
             .subscribe(onNext: { (badgeWishlistModel: BadgeWishlistModel) in
                 print("BadgeCartModel: \(badgeWishlistModel.badgeWishlistCouting)")
                 self.viewModel?.isCallingApiEnd.accept(true)

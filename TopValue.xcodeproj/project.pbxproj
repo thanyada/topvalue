@@ -38,12 +38,14 @@
 		FD17440E2AE3C54B0049E21F /* ForceUpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD17440C2AE3C54A0049E21F /* ForceUpdateChecker.swift */; };
 		FD4413AD2B53FFAB001FD830 /* Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDD6E7032AC949BF00C61E41 /* Staging-Info.plist */; };
 		FD4413B22B540BC3001FD830 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4413A92B53FE66001FD830 /* GoogleService-Info.plist */; };
+		FD4413CA2B5818F4001FD830 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413C92B5818F4001FD830 /* R.generated.swift */; };
+		FD4413CB2B5818F4001FD830 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413C92B5818F4001FD830 /* R.generated.swift */; };
+		FD4413CD2B582E2F001FD830 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */; };
+		FD4413CE2B582E2F001FD830 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */; };
 		FD494BEF2B52C6EA0065FA34 /* AccountViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */; };
 		FD494BF02B52C6EA0065FA34 /* AccountViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */; };
 		FD494BF22B52CC690065FA34 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF12B52CC690065FA34 /* AccountViewModel.swift */; };
 		FD494BF32B52CC690065FA34 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF12B52CC690065FA34 /* AccountViewModel.swift */; };
-		FD494BF52B52CE950065FA34 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF42B52CE950065FA34 /* R.generated.swift */; };
-		FD494BF62B52CE950065FA34 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF42B52CE950065FA34 /* R.generated.swift */; };
 		FD494BF82B52D7270065FA34 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF72B52D7270065FA34 /* BaseViewModel.swift */; };
 		FD494BF92B52D7270065FA34 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF72B52D7270065FA34 /* BaseViewModel.swift */; };
 		FD494BFB2B52DB750065FA34 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BFA2B52DB750065FA34 /* BaseRouter.swift */; };
@@ -52,6 +54,12 @@
 		FD494BFF2B539BF70065FA34 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BFD2B539BF70065FA34 /* CustomTabBar.swift */; };
 		FD494C012B53A0CE0065FA34 /* ApplicationFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494C002B53A0CE0065FA34 /* ApplicationFlag.swift */; };
 		FD494C022B53A0CE0065FA34 /* ApplicationFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494C002B53A0CE0065FA34 /* ApplicationFlag.swift */; };
+		FD577BF22B5EA64E00517562 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577BF12B5EA64E00517562 /* CategoryViewModel.swift */; };
+		FD577BF32B5EA64E00517562 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577BF12B5EA64E00517562 /* CategoryViewModel.swift */; };
+		FD577BF52B5EA84700517562 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577BF42B5EA84700517562 /* WishlistViewModel.swift */; };
+		FD577BF62B5EA84700517562 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577BF42B5EA84700517562 /* WishlistViewModel.swift */; };
+		FD577BF82B5EAAE400517562 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577BF72B5EAAE400517562 /* CartViewModel.swift */; };
+		FD577BF92B5EAAE400517562 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD577BF72B5EAAE400517562 /* CartViewModel.swift */; };
 		FD98D9C82AC988D100445B20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98D9C72AC988D100445B20 /* MainViewController.swift */; };
 		FD98D9C92AC988D100445B20 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98D9C72AC988D100445B20 /* MainViewController.swift */; };
 		FD98D9E22AC98D5500445B20 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98D9E12AC98D5500445B20 /* StringExtension.swift */; };
@@ -155,14 +163,18 @@
 		FD1744082AE3C4DC0049E21F /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		FD17440C2AE3C54A0049E21F /* ForceUpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceUpdateChecker.swift; sourceTree = "<group>"; };
 		FD4413A92B53FE66001FD830 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD4413C92B5818F4001FD830 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FD494BED2B529B5D0065FA34 /* TopValueRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopValueRelease.entitlements; sourceTree = "<group>"; };
 		FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewRouter.swift; sourceTree = "<group>"; };
 		FD494BF12B52CC690065FA34 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
-		FD494BF42B52CE950065FA34 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = ../../../.Trash/R.generated.swift; sourceTree = "<group>"; };
 		FD494BF72B52D7270065FA34 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FD494BFA2B52DB750065FA34 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		FD494BFD2B539BF70065FA34 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		FD494C002B53A0CE0065FA34 /* ApplicationFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlag.swift; sourceTree = "<group>"; };
+		FD577BF12B5EA64E00517562 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		FD577BF42B5EA84700517562 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
+		FD577BF72B5EAAE400517562 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		FD98D9C72AC988D100445B20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FD98D9E12AC98D5500445B20 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FD98D9EB2AC9A6BD00445B20 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -326,6 +338,7 @@
 		FD1743702AE369BB0049E21F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -340,6 +353,7 @@
 		FD1743722AE369EA0049E21F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FD577BF12B5EA64E00517562 /* CategoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -375,6 +389,7 @@
 		FD1743772AE36A3C0049E21F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FD577BF42B5EA84700517562 /* WishlistViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,6 +411,7 @@
 		FD17437A2AE36A710049E21F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FD577BF72B5EAAE400517562 /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -582,7 +598,7 @@
 		FDD6E6B52AC9499600C61E41 = {
 			isa = PBXGroup;
 			children = (
-				FD494BF42B52CE950065FA34 /* R.generated.swift */,
+				FD4413C92B5818F4001FD830 /* R.generated.swift */,
 				FDD6E6C02AC9499600C61E41 /* TopValue */,
 				FDD6E6DA2AC9499600C61E41 /* TopValueTests */,
 				FDD6E6E42AC9499600C61E41 /* TopValueUITests */,
@@ -761,8 +777,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDD6E6EB2AC9499600C61E41 /* Build configuration list for PBXNativeTarget "TopValue" */;
 			buildPhases = (
-				98CD82095F5AC14273F4FAD6 /* [CP] Check Pods Manifest.lock */,
 				FDD6E7722AC953AC00C61E41 /* Run R.swift Script */,
+				98CD82095F5AC14273F4FAD6 /* [CP] Check Pods Manifest.lock */,
 				FDD6E6BA2AC9499600C61E41 /* Sources */,
 				FDD6E6BB2AC9499600C61E41 /* Frameworks */,
 				FDD6E6BC2AC9499600C61E41 /* Resources */,
@@ -820,8 +836,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDD6E6FF2AC949BF00C61E41 /* Build configuration list for PBXNativeTarget "TopValue-Staging" */;
 			buildPhases = (
-				A8B20485103E3EB0B0BE6B0F /* [CP] Check Pods Manifest.lock */,
 				FD39972D2AC9575C00142BCC /* Run R.swift Script */,
+				A8B20485103E3EB0B0BE6B0F /* [CP] Check Pods Manifest.lock */,
 				FDD6E6F52AC949BF00C61E41 /* Sources */,
 				FDD6E6FA2AC949BF00C61E41 /* Frameworks */,
 				FDD6E6FB2AC949BF00C61E41 /* Resources */,
@@ -1129,6 +1145,8 @@
 			files = (
 				FD98D9EC2AC9A6BD00445B20 /* UIColorExtension.swift in Sources */,
 				FD98D9E22AC98D5500445B20 /* StringExtension.swift in Sources */,
+				FD4413CA2B5818F4001FD830 /* R.generated.swift in Sources */,
+				FD4413CD2B582E2F001FD830 /* HomeViewModel.swift in Sources */,
 				FDD6E6CC2AC9499600C61E41 /* TopValue.xcdatamodeld in Sources */,
 				FDC0648D2AC97E2600DF04F8 /* BaseViewController.swift in Sources */,
 				FD1743FC2AE3981E0049E21F /* UIAlertControllerExtension.swift in Sources */,
@@ -1138,8 +1156,10 @@
 				FD494C012B53A0CE0065FA34 /* ApplicationFlag.swift in Sources */,
 				FDC064692AC979D600DF04F8 /* CategoryViewController.swift in Sources */,
 				FD1743FF2AE3985E0049E21F /* ErrorExtension.swift in Sources */,
+				FD577BF52B5EA84700517562 /* WishlistViewModel.swift in Sources */,
 				FD1744022AE3B8220049E21F /* BaseTools.swift in Sources */,
 				FDD6E6C22AC9499600C61E41 /* AppDelegate.swift in Sources */,
+				FD577BF82B5EAAE400517562 /* CartViewModel.swift in Sources */,
 				FD1743E12AE375080049E21F /* RxServiceManager.swift in Sources */,
 				FD1743F02AE37C080049E21F /* BadgeCartModel.swift in Sources */,
 				FD1743F62AE38BE90049E21F /* BadgeWishlistModel.swift in Sources */,
@@ -1150,8 +1170,8 @@
 				FD1743F92AE391BD0049E21F /* UIViewController+RxViewModel.swift in Sources */,
 				FD494BFB2B52DB750065FA34 /* BaseRouter.swift in Sources */,
 				FDD6E6C42AC9499600C61E41 /* SceneDelegate.swift in Sources */,
+				FD577BF22B5EA64E00517562 /* CategoryViewModel.swift in Sources */,
 				FD1743E72AE379D20049E21F /* UITabBarControllerExtensions.swift in Sources */,
-				FD494BF52B52CE950065FA34 /* R.generated.swift in Sources */,
 				FD17440D2AE3C54A0049E21F /* ForceUpdateChecker.swift in Sources */,
 				FD494BF22B52CC690065FA34 /* AccountViewModel.swift in Sources */,
 				FDC064612AC9652400DF04F8 /* HomeViewController.swift in Sources */,
@@ -1184,6 +1204,8 @@
 			files = (
 				FD98D9ED2AC9A6BD00445B20 /* UIColorExtension.swift in Sources */,
 				FD98D9E32AC98D5500445B20 /* StringExtension.swift in Sources */,
+				FD4413CB2B5818F4001FD830 /* R.generated.swift in Sources */,
+				FD4413CE2B582E2F001FD830 /* HomeViewModel.swift in Sources */,
 				FDD6E6F72AC949BF00C61E41 /* TopValue.xcdatamodeld in Sources */,
 				FDC0648E2AC97E2600DF04F8 /* BaseViewController.swift in Sources */,
 				FD1743FD2AE3981E0049E21F /* UIAlertControllerExtension.swift in Sources */,
@@ -1193,8 +1215,10 @@
 				FD494C022B53A0CE0065FA34 /* ApplicationFlag.swift in Sources */,
 				FDC0646A2AC979D600DF04F8 /* CategoryViewController.swift in Sources */,
 				FD1744002AE3985E0049E21F /* ErrorExtension.swift in Sources */,
+				FD577BF62B5EA84700517562 /* WishlistViewModel.swift in Sources */,
 				FD1744032AE3B8220049E21F /* BaseTools.swift in Sources */,
 				FDD6E6F82AC949BF00C61E41 /* AppDelegate.swift in Sources */,
+				FD577BF92B5EAAE400517562 /* CartViewModel.swift in Sources */,
 				FD1743E22AE375080049E21F /* RxServiceManager.swift in Sources */,
 				FD1743F12AE37C080049E21F /* BadgeCartModel.swift in Sources */,
 				FD1743F72AE38BE90049E21F /* BadgeWishlistModel.swift in Sources */,
@@ -1205,8 +1229,8 @@
 				FD1743FA2AE391BD0049E21F /* UIViewController+RxViewModel.swift in Sources */,
 				FD494BFC2B52DB750065FA34 /* BaseRouter.swift in Sources */,
 				FDD6E6F92AC949BF00C61E41 /* SceneDelegate.swift in Sources */,
+				FD577BF32B5EA64E00517562 /* CategoryViewModel.swift in Sources */,
 				FD1743E82AE379D20049E21F /* UITabBarControllerExtensions.swift in Sources */,
-				FD494BF62B52CE950065FA34 /* R.generated.swift in Sources */,
 				FD17440E2AE3C54B0049E21F /* ForceUpdateChecker.swift in Sources */,
 				FD494BF32B52CC690065FA34 /* AccountViewModel.swift in Sources */,
 				FDC064622AC9652400DF04F8 /* HomeViewController.swift in Sources */,
