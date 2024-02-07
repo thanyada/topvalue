@@ -8,19 +8,15 @@
 import Foundation
 import ObjectMapper
 
-public class BadgeCartModel: Mappable {
+public struct BadgeCartModel: Mappable {
     
-    var badgeCartCouting: String = ""
-  
-    init() {
-        
+    var badgeCartCouting: Int = 0
+    
+    public init?(map: Map) {
+        self.mapping(map: map)
     }
     
-    public required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    public func mapping(map: Map) {
-        badgeCartCouting <- map["badgeCartCouting"]
+    public mutating func mapping(map: Map) {
+        badgeCartCouting <- map["items_qty"]
     }
 }

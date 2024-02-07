@@ -17,6 +17,7 @@ class AccountViewController: BaseViewController, WKNavigationDelegate{
     private var webView: WKWebView = WKWebView()
     private let accountViewModel = AccountViewModel()
     private var lastCurrentIndex: Int = 4
+    
     enum LoginType : String {
         case Google = "google"
         case Apple = "apple"
@@ -100,7 +101,7 @@ class AccountViewController: BaseViewController, WKNavigationDelegate{
                 let idToken = googleUser.idToken
                 let accessToken = googleUser.accessToken
                 let email = googleUser.profile?.email
-                self.sentLoginWithGoogleToWeb(loginType: .Google, email: email)
+                self.sentLoginToWeb(loginType: .Google, email: email)
             }
         }
     }
@@ -115,7 +116,7 @@ class AccountViewController: BaseViewController, WKNavigationDelegate{
         controller.performRequests()
     }
     
-    private func sentLoginWithGoogleToWeb(loginType: LoginType, email: String?) {
+    private func sentLoginToWeb(loginType: LoginType, email: String?) {
         let script = "receiveEmailForLogin('\(loginType)', '\(email ?? "")');"
         webView.evaluateJavaScript(script) { _, error in
             if let error = error {
@@ -133,7 +134,7 @@ extension AccountViewController: ASAuthorizationControllerDelegate, ASAuthorizat
         switch authorization.credential {
             case let credentials as ASAuthorizationAppleIDCredential:
                 let email = credentials.email
-                self.sentLoginWithGoogleToWeb(loginType: .Apple, email: email)
+                self.sentLoginToWeb(loginType: .Apple, email: email)
                 break
                 
             default:
@@ -153,6 +154,7 @@ extension AccountViewController: WKScriptMessageHandler {
         if message.name == "receiveTokenLogin", let messageBody = message.body as? String {
             print("Received message from JavaScript: \(messageBody)")
             UserDefaults.standard.set(messageBody, forKey: "userLoginToken")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
         } else if message.name == "clickLoginButton", let messageBody = message.body as? String {
             if messageBody == LoginType.Google.rawValue {
                 self.signInWithGoogle()

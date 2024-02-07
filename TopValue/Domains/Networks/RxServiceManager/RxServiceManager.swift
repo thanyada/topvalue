@@ -34,7 +34,9 @@ class RxServiceManager {
                     .responseData { response in
                         switch response.result {
                         case .success(let data):
-                            if let parsedObject = Mapper<T>().map(JSONString: String(data: data, encoding: .utf8) ?? "") {
+                            let dataString = String(data: data, encoding: .utf8)
+                            let trimmedString = dataString?.trimmingCharacters(in: CharacterSet(charactersIn: "[]"))
+                            if let parsedObject = Mapper<T>().map(JSONString:trimmedString ?? "") {
                                 observer.onNext(parsedObject)
                                 observer.onCompleted()
                             } else {

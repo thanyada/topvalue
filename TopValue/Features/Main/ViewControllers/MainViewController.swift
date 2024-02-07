@@ -36,9 +36,10 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         setFont()
         guard let vm = viewModel else { return }
         bind(vm, disposeBag)
-        fetBadgeCartCouting()
-        fetBadgeWishListCouting()
+        fetchBadgeCartCouting()
+        fetchBadgeWishListCouting()
         setupBinding()
+        setupNotification()
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +48,10 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         tabFrame.size.height = Constants.heightTapBar
         tabFrame.origin.y = self.view.frame.size.height - Constants.heightTapBar
         self.mainTabbar.frame = tabFrame
+    }
+    
+    func setupNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchCartData), name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
     }
     
     func itemWidthForTabBar(_ tabBar: UITabBar) -> CGFloat {
@@ -59,7 +64,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             .badgeCartModel
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
-                guard let self = self, let badgeCardCount = model?.badgeCartCouting, badgeCardCount != "" else { return }
+                guard let self = self, let badgeCardCount = model?.badgeCartCouting, badgeCardCount > 0 else { return }
                 self.addBadge(
                     index: 3,
                     value: badgeCardCount,
@@ -74,7 +79,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             .BadgeWishlistModel
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
-                guard let self = self, let badgeWishlistCount = model?.badgeWishlistCouting, badgeWishlistCount != "" else { return }
+                guard let self = self, let badgeWishlistCount = model?.badgeWishlistCount, badgeWishlistCount > 0 else { return }
                 self.addBadge(index: 2,
                               value: badgeWishlistCount,
                               color: UIColor.Reds.NormalRedV1,
@@ -130,16 +135,21 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
         }
     }
+    
+    @objc private func fetchCartData() {
+        fetchBadgeCartCouting()
+        fetchBadgeWishListCouting()
+    }
 }
 
 // MARK - service request
 extension MainViewController {
-    private func fetBadgeCartCouting() {
+    private func fetchBadgeCartCouting() {
         interactor?.fetchBadgeCartModel()
             .disposed(by: self.disposeBag)
     }
     
-    private func fetBadgeWishListCouting() {
+    private func fetchBadgeWishListCouting() {
         interactor?.fetchBadgeWishlistModel()
             .disposed(by: self.disposeBag)
     }

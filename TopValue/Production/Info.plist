@@ -24,7 +24,7 @@
 	<key>api</key>
 	<dict>
 		<key>host</key>
-		<string>api.topvalue.com/rest/V1</string>
+		<string>https://api.topvalue.com/rest/V1</string>
 	</dict>
 </dict>
 </plist>

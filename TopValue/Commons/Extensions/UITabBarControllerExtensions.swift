@@ -36,7 +36,7 @@ extension UITabBarController {
 //
 //    }
 
-    func addBadge(index: Int, value: String, color: UIColor, font: UIFont, badgeYPosition: CGFloat) {
+    func addBadge(index: Int, value: Int, color: UIColor, font: UIFont, badgeYPosition: CGFloat) {
         let itemPosition = CGFloat(index + 1)
         let itemWidth: CGFloat = tabBar.frame.width / CGFloat(tabBar.items!.count)
         let bgColor = color
@@ -50,7 +50,7 @@ extension UITabBarController {
         badgeView.textColor = UIColor.white
         badgeView.textAlignment = .center
         badgeView.font = font
-        badgeView.text = value
+        badgeView.text = "\(value)"
         badgeView.backgroundColor = bgColor
         badgeView.tag = index
         badgeView.layer.borderWidth = 1

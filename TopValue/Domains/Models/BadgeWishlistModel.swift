@@ -8,18 +8,14 @@
 import Foundation
 import ObjectMapper
 
-public class BadgeWishlistModel: Mappable {
-    var badgeWishlistCouting: String = ""
-  
-    init() {
-        
+public struct BadgeWishlistModel: Mappable {
+    var badgeWishlistCount: Int = 0
+
+    public init?(map: Map) {
+        self.mapping(map: map)
     }
-    
-    public required init?(map: Map) {
-        mapping(map: map)
-    }
-    
-    public func mapping(map: Map) {
-        badgeWishlistCouting <- map["badgeWishlistCouting"]
+
+    public mutating func mapping(map: Map) {
+        badgeWishlistCount <- map["total_count"]
     }
 }
