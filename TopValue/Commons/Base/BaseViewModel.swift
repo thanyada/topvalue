@@ -21,6 +21,10 @@ class BaseViewModel {
         case clickCategoryButton = "clickCategoryButton"
         case clickAccountButton = "clickAccountButton"
     }
+    enum LoginType : String {
+        case Google = "google"
+        case Apple = "apple"
+    }
     
     
     func navigateToHome() {

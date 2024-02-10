@@ -18,7 +18,6 @@ final class MainInteractor {
 
     func fetchBadgeCartModel() -> Disposable  {
         let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/carts/mine/totals?fields=items_qty"
-//        let apiURL = "api.topvalue.asia/rest/V1/carts/mine/totals?fields=items_qty"
         let userLoginToken = UserDefaults.standard.string(forKey: "userLoginToken")
         viewModel?.isCallingApiEnd.accept(false)
         return serviceManager.request(apiURL, method: .get, headers: ["Authorization": "Bearer \(userLoginToken ?? "")"])
@@ -28,7 +27,6 @@ final class MainInteractor {
                 self.viewModel?.badgeCartModel.accept(badgeCartModel)
             }, onError: { error in
                 self.viewModel?.isCallingApiEnd.accept(true)
-                self.viewModel?.errorSubject.onNext(error)
                 print("Error: \(error)")
             })
     }
@@ -40,11 +38,15 @@ final class MainInteractor {
         return serviceManager.request(apiURL, method: .get, headers: ["Authorization": "Bearer \(userLoginToken ?? "")"])
             .subscribe(onNext: { (badgeWishlistModel: BadgeWishlistModel) in
                 self.viewModel?.isCallingApiEnd.accept(true)
-                self.viewModel?.BadgeWishlistModel.accept(badgeWishlistModel)
+                self.viewModel?.badgeWishlistModel.accept(badgeWishlistModel)
             }, onError: { error in
                 self.viewModel?.isCallingApiEnd.accept(true)
-                self.viewModel?.errorSubject.onNext(error)
                 print("Error: \(error)")
             })
+    }
+    
+    func removeAllBadge() {
+        self.viewModel?.updateBadgeCartCounting(newCount: 0)
+        self.viewModel?.updateBadgeWishListCount(newCount: 0)
     }
 }

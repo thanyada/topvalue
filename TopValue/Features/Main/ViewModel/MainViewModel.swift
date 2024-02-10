@@ -15,5 +15,17 @@ class MainViewModel: RxViewModelProtocol {
     let isCallingApiEnd = BehaviorRelay<Bool>(value: true)
     let errorSubject = PublishSubject<Error>()
     var badgeCartModel = BehaviorRelay<BadgeCartModel?>(value: nil)
-    var BadgeWishlistModel = BehaviorRelay<BadgeWishlistModel?>(value: nil)
+    var badgeWishlistModel = BehaviorRelay<BadgeWishlistModel?>(value: nil)
+    
+    func updateBadgeCartCounting(newCount: Int) {
+        var currentModel = badgeCartModel.value
+        currentModel?.badgeCartCouting = newCount
+        badgeCartModel.accept(currentModel)
+    }
+    
+    func updateBadgeWishListCount(newCount: Int) {
+        var currentModel = badgeWishlistModel.value
+        currentModel?.badgeWishlistCount = newCount
+        badgeWishlistModel.accept(currentModel)
+    }
 }

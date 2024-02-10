@@ -12,32 +12,20 @@ class WishlistViewController: BaseViewController {
 
     @IBOutlet private weak var webContainner: UIView!
     var path: String = ApplicationFlag.wishListPath
-    private var webView: WKWebView = WKWebView()
     private let wishlistViewModel = WishlistViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         config(request: path)
         createBinding()
     }
     
-    private func setupView() {
-        let configuration = WKWebViewConfiguration()
-        let userContentController = WKUserContentController()
-        userContentController.add(self, name: "clickHomeButton")
-        userContentController.add(self, name: "clickCartButton")
-        userContentController.add(self, name: "clickWishListButton")
-        userContentController.add(self, name: "clickCategoryButton")
-        userContentController.add(self, name: "clickAccountButton")
-        configuration.userContentController = userContentController
-        configuration.applicationNameForUserAgent = "Version/8.0.2 Safari/600.2.5"
-        let webView = WKWebView(frame: view.bounds, configuration: configuration)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.webView.navigationDelegate = self
-        self.webView = webView
-        self.webContainner.addSubview(webView)
-        self.webView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalToSuperview()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            guard let _ = UserDefaults.standard.string(forKey: "userLoginToken") else {
+                self.viewModel.navigateToAccount()
+                return
+            }
         }
     }
     
@@ -83,19 +71,25 @@ class WishlistViewController: BaseViewController {
         }
     }
 }
-extension WishlistViewController: WKScriptMessageHandler, WKNavigationDelegate {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "clickHomeButton" {
-            viewModel.navigateToHome()
-        } else if message.name == "clickCartButton" {
-            viewModel.navigateToCart()
-        } else if message.name == "clickWishListButton" {
-            viewModel.navigateToWishList()
-        } else if message.name == "clickCategoryButton" {
-            viewModel.navigateToCategory()
-        } else if message.name == "clickAccountButton" {
-            viewModel.navigateToAccount()
-        }
-    }
-}
-
+//extension WishlistViewController: WKScriptMessageHandler, WKNavigationDelegate {
+//    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+//        if message.name == "clickHomeButton" {
+//            viewModel.navigateToHome()
+//        } else if message.name == "clickCartButton" {
+//            viewModel.navigateToCart()
+//        } else if message.name == "clickWishListButton" {
+//            viewModel.navigateToWishList()
+//        } else if message.name == "clickCategoryButton" {
+//            viewModel.navigateToCategory()
+//        } else if message.name == "clickAccountButton" {
+//            viewModel.navigateToAccount()
+//        } else if message.name == "updateCartCount" || message.name == "updateWishListCount" {
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
+//        } else if message.name == "hideMenuBar" {
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTabbar"), object: nil)
+//        } else if message.name == "showManuBar" {
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showTabbar"), object: nil)
+//        }
+//    }
+//}
+//

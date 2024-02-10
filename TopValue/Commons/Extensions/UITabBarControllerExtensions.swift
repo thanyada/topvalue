@@ -10,32 +10,6 @@ public class PGTabBadge: UILabel { }
 
 extension UITabBarController {
     
-//    func setBadges(badgeValues: [Int]) {
-//
-//        var labelExistsForIndex = [Bool]()
-//
-//        for _ in badgeValues {
-//            labelExistsForIndex.append(false)
-//        }
-//
-//        for view in self.tabBar.subviews where view is PGTabBadge {
-//            let badgeView = view as! PGTabBadge
-//            let index = badgeView.tag
-//
-//            if badgeValues[index] == 0 {
-//                badgeView.removeFromSuperview()
-//            }
-//
-//            labelExistsForIndex[index] = true
-//            badgeView.text = String(badgeValues[index])
-//        }
-//
-//        for i in 0...(labelExistsForIndex.count - 1) where !labelExistsForIndex[i] && (badgeValues[i] > 0) {
-//            addBadge(index: i, value: "\(badgeValues[i])", color: .red, font: UIFont(name: "Helvetica-Light", size: 11)!, badgeYPosition: <#CGFloat#>)
-//        }
-//
-//    }
-
     func addBadge(index: Int, value: Int, color: UIColor, font: UIFont, badgeYPosition: CGFloat) {
         let itemPosition = CGFloat(index + 1)
         let itemWidth: CGFloat = tabBar.frame.width / CGFloat(tabBar.items!.count)
@@ -56,6 +30,12 @@ extension UITabBarController {
         badgeView.layer.borderWidth = 1
         badgeView.layer.borderColor = UIColor.white.cgColor
         tabBar.addSubview(badgeView)
+    }
+    
+    func removeBadge(index: Int) {
+        if let badgeView = tabBar.viewWithTag(index) as? PGTabBadge {
+            badgeView.removeFromSuperview()
+        }
     }
 }
     

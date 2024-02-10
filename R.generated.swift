@@ -12,6 +12,9 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
+
+  let entitlements = entitlements()
+
   var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
@@ -117,7 +120,7 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 10 images.
+  /// This `_R.image` struct is generated, and contains static references to 12 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -150,6 +153,12 @@ struct _R {
 
     /// Image `ic-wishlist-tabbar-selected`.
     var icWishlistTabbarSelected: RswiftResources.ImageResource { .init(name: "ic-wishlist-tabbar-selected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `splashScreenBottom`.
+    var splashScreenBottom: RswiftResources.ImageResource { .init(name: "splashScreenBottom", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `splashScreenLogo`.
+    var splashScreenLogo: RswiftResources.ImageResource { .init(name: "splashScreenLogo", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -198,6 +207,14 @@ struct _R {
           }
         }
       }
+    }
+  }
+
+  /// This `_R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    let comAppleDeveloperApplesignin = comAppleDeveloperApplesignin()
+    struct comAppleDeveloperApplesignin {
+      let `default`: String = "Default"
     }
   }
 
@@ -373,7 +390,8 @@ struct _R {
 
       let name = "LaunchScreen"
       func validate() throws {
-
+        if UIKit.UIImage(named: "splashScreenBottom", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'splashScreenBottom' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "splashScreenLogo", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'splashScreenLogo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
       }
     }
 

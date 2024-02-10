@@ -12,34 +12,12 @@ class CategoryViewController: BaseViewController {
 
     @IBOutlet private weak var webContainner: UIView!
     private var path: String = ApplicationFlag.categoryPath
-    private var webView: WKWebView = WKWebView()
     private let categoryViewModel = CategoryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         config(request: path)
         createBinding()
-    }
-    
-    private func setupView() {
-        let configuration = WKWebViewConfiguration()
-        let userContentController = WKUserContentController()
-        userContentController.add(self, name: "clickHomeButton")
-        userContentController.add(self, name: "clickCartButton")
-        userContentController.add(self, name: "clickWishListButton")
-        userContentController.add(self, name: "clickCategoryButton")
-        userContentController.add(self, name: "clickAccountButton")
-        configuration.userContentController = userContentController
-        configuration.applicationNameForUserAgent = "Version/8.0.2 Safari/600.2.5"
-        let webView = WKWebView(frame: view.bounds, configuration: configuration)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.webView.navigationDelegate = self
-        self.webView = webView
-        self.webContainner.addSubview(webView)
-        self.webView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalToSuperview()
-        }
     }
     
     private func config(request: String) {
@@ -86,19 +64,4 @@ class CategoryViewController: BaseViewController {
     }
    
 
-}
-extension CategoryViewController: WKScriptMessageHandler, WKNavigationDelegate {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "clickHomeButton" {
-            viewModel.navigateToHome()
-        } else if message.name == "clickCartButton" {
-            viewModel.navigateToCart()
-        } else if message.name == "clickWishListButton" {
-            viewModel.navigateToWishList()
-        } else if message.name == "clickCategoryButton" {
-            viewModel.navigateToCategory()
-        } else if message.name == "clickAccountButton" {
-            viewModel.navigateToAccount()
-        }
-    }
 }

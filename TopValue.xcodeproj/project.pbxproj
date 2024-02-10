@@ -193,6 +193,8 @@
 		FDC064862AC97DFC00DF04F8 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		FDC064892AC97E0700DF04F8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		FDC0648C2AC97E2600DF04F8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FDC5F6BB2B77A20200DA776B /* TopValue-Staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TopValue-Staging.entitlements"; sourceTree = "<group>"; };
+		FDC5F6BC2B77A24300DA776B /* TopValue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopValue.entitlements; sourceTree = "<group>"; };
 		FDD6E6BE2AC9499600C61E41 /* TopValue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopValue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD6E6C12AC9499600C61E41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD6E6C32AC9499600C61E41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 		FDD6E6B52AC9499600C61E41 = {
 			isa = PBXGroup;
 			children = (
+				FDC5F6BB2B77A20200DA776B /* TopValue-Staging.entitlements */,
 				FD4413C92B5818F4001FD830 /* R.generated.swift */,
 				FDD6E6C02AC9499600C61E41 /* TopValue */,
 				FDD6E6DA2AC9499600C61E41 /* TopValueTests */,
@@ -622,6 +625,7 @@
 		FDD6E6C02AC9499600C61E41 /* TopValue */ = {
 			isa = PBXGroup;
 			children = (
+				FDC5F6BC2B77A24300DA776B /* TopValue.entitlements */,
 				FD494BED2B529B5D0065FA34 /* TopValueRelease.entitlements */,
 				FDD6E6C12AC9499600C61E41 /* AppDelegate.swift */,
 				FD494C002B53A0CE0065FA34 /* ApplicationFlag.swift */,
@@ -777,8 +781,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDD6E6EB2AC9499600C61E41 /* Build configuration list for PBXNativeTarget "TopValue" */;
 			buildPhases = (
-				FDD6E7722AC953AC00C61E41 /* Run R.swift Script */,
 				98CD82095F5AC14273F4FAD6 /* [CP] Check Pods Manifest.lock */,
+				FDD6E7722AC953AC00C61E41 /* Run R.swift Script */,
 				FDD6E6BA2AC9499600C61E41 /* Sources */,
 				FDD6E6BB2AC9499600C61E41 /* Frameworks */,
 				FDD6E6BC2AC9499600C61E41 /* Resources */,
@@ -836,8 +840,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDD6E6FF2AC949BF00C61E41 /* Build configuration list for PBXNativeTarget "TopValue-Staging" */;
 			buildPhases = (
-				FD39972D2AC9575C00142BCC /* Run R.swift Script */,
 				A8B20485103E3EB0B0BE6B0F /* [CP] Check Pods Manifest.lock */,
+				FD39972D2AC9575C00142BCC /* Run R.swift Script */,
 				FDD6E6F52AC949BF00C61E41 /* Sources */,
 				FDD6E6FA2AC949BF00C61E41 /* Frameworks */,
 				FDD6E6FB2AC949BF00C61E41 /* Resources */,
@@ -1406,9 +1410,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TopValue/TopValue.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8G39H295D3;
+				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopValue/Production/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1419,7 +1424,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.topValue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1428,7 +1433,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1441,7 +1446,7 @@
 				CODE_SIGN_ENTITLEMENTS = TopValue/TopValueRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8G39H295D3;
+				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopValue/Production/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1452,7 +1457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-DPRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = com.topvalue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1461,7 +1466,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1551,9 +1556,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TopValue-Staging.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8G39H295D3;
+				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Staging-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TopValue-Staging";
@@ -1569,12 +1576,13 @@
 				OTHER_SWIFT_FLAGS = "-DSTAGING";
 				PRODUCT_BUNDLE_IDENTIFIER = com.topValue.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1587,7 +1595,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TopValue-StagingRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8G39H295D3;
+				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Staging-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TopValue-Staging";
@@ -1608,7 +1616,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

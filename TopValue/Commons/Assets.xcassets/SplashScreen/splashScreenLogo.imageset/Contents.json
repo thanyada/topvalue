@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "splashScreenLogo.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

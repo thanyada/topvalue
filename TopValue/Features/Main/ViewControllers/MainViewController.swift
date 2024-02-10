@@ -44,14 +44,12 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        var tabFrame = self.tabBar.frame
-        tabFrame.size.height = Constants.heightTapBar
-        tabFrame.origin.y = self.view.frame.size.height - Constants.heightTapBar
-        self.mainTabbar.frame = tabFrame
     }
     
     func setupNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(fetchCartData), name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeAllBadgeData), name: NSNotification.Name(rawValue: "clearBadgeData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateRedBar), name: NSNotification.Name(rawValue: "updateRedBar"), object: nil)
     }
     
     func itemWidthForTabBar(_ tabBar: UITabBar) -> CGFloat {
@@ -64,7 +62,10 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             .badgeCartModel
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
-                guard let self = self, let badgeCardCount = model?.badgeCartCouting, badgeCardCount > 0 else { return }
+                guard let self = self, let badgeCardCount = model?.badgeCartCouting, badgeCardCount > 0 else {
+                    self?.removeBadge(index: 3)
+                    return
+                }
                 self.addBadge(
                     index: 3,
                     value: badgeCardCount,
@@ -76,10 +77,13 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             .disposed(by: self.disposeBag)
         
         viewModel?
-            .BadgeWishlistModel
+            .badgeWishlistModel
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
-                guard let self = self, let badgeWishlistCount = model?.badgeWishlistCount, badgeWishlistCount > 0 else { return }
+                guard let self = self, let badgeWishlistCount = model?.badgeWishlistCount, badgeWishlistCount > 0 else {
+                    self?.removeBadge(index: 2)
+                    return
+                }
                 self.addBadge(index: 2,
                               value: badgeWishlistCount,
                               color: UIColor.Reds.NormalRedV1,
@@ -133,12 +137,21 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         if let index = tabBarController.viewControllers?.firstIndex(of: viewController) {
             let userInfo: [String: Any] = ["selectedIndex": index]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
+            updateRedBar()
         }
     }
     
     @objc private func fetchCartData() {
         fetchBadgeCartCouting()
         fetchBadgeWishListCouting()
+    }
+    
+    @objc private func removeAllBadgeData() {
+        badgeRemoveAll()
+    }
+    
+    @objc private func updateRedBar() {
+        self.mainTabbar.updateSelectedView()
     }
 }
 
@@ -153,5 +166,9 @@ extension MainViewController {
         interactor?.fetchBadgeWishlistModel()
             .disposed(by: self.disposeBag)
     }
+    private func badgeRemoveAll() {
+        interactor?.removeAllBadge()
+    }
+   
 }
 

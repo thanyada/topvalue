@@ -3,4 +3,149 @@
    uuid = "D712B2B1-BD53-42ED-8286-99221C48FB75"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39D3B3A0-F122-4AB3-AD9C-686BFE72AE2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "setupRemoteConfig()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "39D3B3A0-F122-4AB3-AD9C-686BFE72AE2F - b18cd2c75d5d48cc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Dead&gt; of TopValue.SceneDelegate.setupRemoteConfig() -&gt; ()"
+                  moduleName = "TopValue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "39D3B3A0-F122-4AB3-AD9C-686BFE72AE2F - 381ada5a54b0b1f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue.SceneDelegate.verifyVersion() -&gt; ()"
+                  moduleName = "TopValue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "323DF0EE-8CB7-441C-A5F6-40BC73F9C908"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "setupRemoteConfig()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82E2AB6B-EAE1-4AD2-B766-3E6DF38850C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "setupRemoteConfig()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F517CD2E-54B0-43A9-999A-42A0B89B8E26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopValue/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "verifyVersion()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F517CD2E-54B0-43A9-999A-42A0B89B8E26 - 381ada5a54b0b516"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue.SceneDelegate.verifyVersion() -&gt; ()"
+                  moduleName = "TopValue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "552">
+               </Location>
+               <Location
+                  uuid = "F517CD2E-54B0-43A9-999A-42A0B89B8E26 - 381ada5a54b0b516"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue.SceneDelegate.verifyVersion() -&gt; ()"
+                  moduleName = "TopValue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "F517CD2E-54B0-43A9-999A-42A0B89B8E26 - 2b54d9295a234fa4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopValue_Staging.SceneDelegate.verifyVersion() -&gt; ()"
+                  moduleName = "TopValue-Staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/book/Documents/Projects/TopValue/TopValue/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
