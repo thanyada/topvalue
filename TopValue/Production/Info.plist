@@ -7,12 +7,12 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.268646396554-73mr5rsisu5osq0aiemrr776iokaerll</string>
+				<string>com.googleusercontent.apps.65471072883-tqffo2gl20ouer775aad1lis6ifdke0l</string>
 			</array>
 		</dict>
 	</array>
 	<key>GIDClientID</key>
-	<string>268646396554-73mr5rsisu5osq0aiemrr776iokaerll.apps.googleusercontent.com</string>
+	<string>65471072883-tqffo2gl20ouer775aad1lis6ifdke0l.apps.googleusercontent.com</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -37,5 +37,9 @@
 		<key>host</key>
 		<string>https://api.topvalue.com/rest/V1</string>
 	</dict>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDarkContent</string>
 </dict>
 </plist>
