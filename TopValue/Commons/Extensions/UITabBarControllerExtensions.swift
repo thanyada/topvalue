@@ -37,6 +37,20 @@ extension UITabBarController {
             badgeView.removeFromSuperview()
         }
     }
-}
+    func hideTabBar(isHidden:Bool) {
+        if (isTabBarAlreadyHidden() == isHidden) { return }
+        let frame = self.tabBar.frame
+        let height = frame.size.height
+        let offsetY = (isHidden ? -height : height)
+        self.tabBar.frame.offsetBy(dx:0, dy:offsetY)
+        self.view.frame = CGRect(x:0,y:0,width: self.view.frame.width, height: self.view.frame.height + offsetY)
+        self.view.setNeedsDisplay()
+        self.view.layoutIfNeeded()
+    }
     
+    func isTabBarAlreadyHidden() ->Bool {
+        return self.tabBar.frame.origin.y < UIScreen.main.bounds.height
+    }
+}
+
 
