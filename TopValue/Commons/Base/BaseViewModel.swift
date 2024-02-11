@@ -26,7 +26,6 @@ class BaseViewModel {
         case Apple = "apple"
     }
     
-    
     func navigateToHome() {
         BaseRouter.shared.gotoHomeViewController()
     }

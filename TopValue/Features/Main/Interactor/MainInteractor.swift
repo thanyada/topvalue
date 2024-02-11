@@ -17,7 +17,7 @@ final class MainInteractor {
     }
 
     func fetchBadgeCartModel() -> Disposable  {
-        let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/carts/mine/totals?fields=items_qty"
+        let apiURL = "https://api.topvalue.asia/rest/V1/carts/mine/totals?fields=items_qty"//(BaseTools.getApiConfig(key: "host") ?? "") + "/carts/mine/totals?fields=items_qty"
         let userLoginToken = UserDefaults.standard.string(forKey: "userLoginToken")
         viewModel?.isCallingApiEnd.accept(false)
         return serviceManager.request(apiURL, method: .get, headers: ["Authorization": "Bearer \(userLoginToken ?? "")"])
@@ -32,7 +32,7 @@ final class MainInteractor {
     }
 
     func fetchBadgeWishlistModel() -> Disposable {
-        let apiURL = (BaseTools.getApiConfig(key: "host") ?? "") + "/wishlist?fields=total_count"
+        let apiURL = "https://api.topvalue.asia/rest/V1/wishlist?fields=total_count" //(BaseTools.getApiConfig(key: "host") ?? "") + "/wishlist?fields=total_count"
         viewModel?.isCallingApiEnd.accept(false)
         let userLoginToken = UserDefaults.standard.string(forKey: "userLoginToken")
         return serviceManager.request(apiURL, method: .get, headers: ["Authorization": "Bearer \(userLoginToken ?? "")"])

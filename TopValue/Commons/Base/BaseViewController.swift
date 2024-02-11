@@ -24,9 +24,6 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupWebView()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(showTabBar), name: NSNotification.Name(rawValue: "showTabbar"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(hideTabBar), name: NSNotification.Name(rawValue: "hideTabbar"), object: nil)
     }
     
     private func setupWebView() {
@@ -73,6 +70,8 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
                 } else {
                     self.showTabBar()
                 }
+            } else {
+                self.showTabBar()
             }
         }
     }
@@ -100,11 +99,11 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
                 break
         }
     }
-    @objc private func hideTabBar() {
+    @objc func hideTabBar() {
         self.tabBarController?.hideTabBar(isHidden: false)
     }
     
-    @objc private func showTabBar() {
+    @objc func showTabBar() {
         self.tabBarController?.hideTabBar(isHidden: true)
     }
     
@@ -125,23 +124,37 @@ extension BaseViewController: WKScriptMessageHandler{
             }
         } else if message.name == "clickHomeButton" {
             viewModel.navigateToHome()
+            let userInfo: [String: Any] = ["selectedIndex": 0]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
         } else if message.name == "clickCartButton" {
+            let userInfo: [String: Any] = ["selectedIndex": 3]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
             viewModel.navigateToCart()
         } else if message.name == "clickWishListButton" {
+            let userInfo: [String: Any] = ["selectedIndex": 2]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
             viewModel.navigateToWishList()
+            showTabBar()
         } else if message.name == "clickCategoryButton" {
+            let userInfo: [String: Any] = ["selectedIndex": 1]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
             viewModel.navigateToCategory()
+            showTabBar()
         } else if message.name == "clickAccountButton" {
+            let userInfo: [String: Any] = ["selectedIndex": 4]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tabbarDidSelected"), object: nil, userInfo: userInfo)
             viewModel.navigateToAccount()
+            showTabBar()
         } else if message.name == "logout" {
             UserDefaults.standard.removeObject(forKey: "userLoginToken")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "clearBadgeData"), object: nil)
         } else if message.name == "updateCartCount" || message.name == "updateWishListCount" {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
         } else if message.name == "hideMenuBar" {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTabbar"), object: nil)
-        } else if message.name == "showManuBar" {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showTabbar"), object: nil)
+            hideTabBar()
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTabbar"), object: nil)
         }
     }
 }
@@ -151,8 +164,6 @@ extension BaseViewController {
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
             guard error == nil else { return }
             if let googleUser = GIDSignIn.sharedInstance.currentUser {
-                let idToken = googleUser.idToken
-                let accessToken = googleUser.accessToken
                 let email = googleUser.profile?.email
                 self.sentLoginToWeb(loginType: .Google, email: email)
             }
@@ -186,8 +197,17 @@ extension BaseViewController: ASAuthorizationControllerDelegate, ASAuthorization
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
             case let credentials as ASAuthorizationAppleIDCredential:
-                let email = credentials.email
-                self.sentLoginToWeb(loginType: .Apple, email: email)
+                if let email = credentials.email {
+                    UserDefaults.standard.set(email, forKey: "Apple_Email")
+                    self.sentLoginToWeb(loginType: .Apple, email: email)
+                } else {
+                    let email = UserDefaults.standard.string(forKey: "Apple_Email")
+                    self.sentLoginToWeb(loginType: .Apple, email: email)
+                }
+                /*if need to use token */
+//                else if let identityToken = credentials.identityToken, let identityTokenEncoded = String(data: identityToken, encoding: .utf8) {
+//                    self.sentLoginToWeb(loginType: .Apple, email: identityTokenEncoded)
+//                }
                 break
                 
             default:

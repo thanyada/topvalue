@@ -18,6 +18,12 @@ class HomeViewController: BaseViewController {
         createBinding()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showTabBar()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateRedBar"), object: nil)
+    }
+    
     private func createBinding() {
         NotificationCenter
             .default
