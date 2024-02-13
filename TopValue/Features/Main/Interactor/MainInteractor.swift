@@ -10,7 +10,7 @@ import RxRelay
 import RxSwift
 final class MainInteractor {
     let serviceManager = RxServiceManager.shared
-    weak var viewModel: MainViewModel?
+    var viewModel: MainViewModel?
     
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
@@ -45,8 +45,5 @@ final class MainInteractor {
             })
     }
     
-    func removeAllBadge() {
-        self.viewModel?.updateBadgeCartCounting(newCount: 0)
-        self.viewModel?.updateBadgeWishListCount(newCount: 0)
-    }
+   
 }

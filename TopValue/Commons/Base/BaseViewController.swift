@@ -26,6 +26,16 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
         setupWebView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let currentUrl = webView.currentURL()?.absoluteString, currentUrl.contains("/products/") {
+            hideTabBar()
+        }else {
+            showTabBar()
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateRedBar"), object: nil)
+    }
+    
     private func setupWebView() {
         let configuration = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
@@ -70,9 +80,11 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
                 } else {
                     self.showTabBar()
                 }
+                debugPrint(keyCheck)
             } else {
                 self.showTabBar()
             }
+            
         }
     }
     
@@ -116,6 +128,7 @@ extension BaseViewController: WKScriptMessageHandler{
             print("Received message from JavaScript: \(messageBody)")
             UserDefaults.standard.set(messageBody, forKey: "userLoginToken")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loginSuccess"), object: nil)
         } else if message.name == "clickLoginButton", let messageBody = message.body as? String {
             if messageBody == BaseViewModel.LoginType.Google.rawValue {
                 self.signInWithGoogle()
@@ -150,11 +163,11 @@ extension BaseViewController: WKScriptMessageHandler{
         } else if message.name == "logout" {
             UserDefaults.standard.removeObject(forKey: "userLoginToken")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "clearBadgeData"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "logoutSuccess"), object: nil)
         } else if message.name == "updateCartCount" || message.name == "updateWishListCount" {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchBadgeData"), object: nil)
         } else if message.name == "hideMenuBar" {
             hideTabBar()
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTabbar"), object: nil)
         }
     }
 }

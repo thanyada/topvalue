@@ -17,15 +17,4 @@ class MainViewModel: RxViewModelProtocol {
     var badgeCartModel = BehaviorRelay<BadgeCartModel?>(value: nil)
     var badgeWishlistModel = BehaviorRelay<BadgeWishlistModel?>(value: nil)
     
-    func updateBadgeCartCounting(newCount: Int) {
-        var currentModel = badgeCartModel.value
-        currentModel?.badgeCartCouting = newCount
-        badgeCartModel.accept(currentModel)
-    }
-    
-    func updateBadgeWishListCount(newCount: Int) {
-        var currentModel = badgeWishlistModel.value
-        currentModel?.badgeWishlistCount = newCount
-        badgeWishlistModel.accept(currentModel)
-    }
 }

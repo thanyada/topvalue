@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
     private var path: String = ApplicationFlag.homePagePath
     private let homeViewModel = HomeViewModel()
     private var lastCurrentIndex: Int = 0
+    private var isLogin: Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
         config(request: path)
@@ -20,8 +21,14 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        showTabBar()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateRedBar"), object: nil)
+        guard let isLogin else { return }
+        if isLogin {
+            movetoBasePath()
+            self.isLogin = nil
+        } else {
+            movetoBasePath()
+            self.isLogin = nil
+        }
     }
     
     private func createBinding() {
@@ -31,6 +38,24 @@ class HomeViewController: BaseViewController {
                 self,
                 selector: #selector(handleTabbarDidSelected),
                 name: NSNotification.Name(rawValue: "tabbarDidSelected"),
+                object: nil
+            )
+        
+        NotificationCenter
+            .default
+            .addObserver(
+                self,
+                selector: #selector(updateLoginSuccess),
+                name: NSNotification.Name(rawValue: "loginSuccess"),
+                object: nil
+            )
+        
+        NotificationCenter
+            .default
+            .addObserver(
+                self,
+                selector: #selector(updateLogoutSuccess),
+                name: NSNotification.Name(rawValue: "logoutSuccess"),
                 object: nil
             )
         
@@ -49,6 +74,14 @@ class HomeViewController: BaseViewController {
         guard let url = URL(string: path) else { return }
         let request = URLRequest(url: url)
         webView.load(request)
+    }
+    
+    @objc private func updateLoginSuccess() {
+        isLogin = true
+    }
+    
+    @objc private func updateLogoutSuccess() {
+        isLogin = false
     }
     
     @objc private func handleTabbarDidSelected(_ notification: Notification) {

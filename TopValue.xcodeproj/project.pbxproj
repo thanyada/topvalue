@@ -68,6 +68,8 @@
 		FD98D9ED2AC9A6BD00445B20 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98D9EB2AC9A6BD00445B20 /* UIColorExtension.swift */; };
 		FD98D9FD2AC9B20100445B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD98DA002AC9B20100445B20 /* Localizable.strings */; };
 		FD98D9FE2AC9B20100445B20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD98DA002AC9B20100445B20 /* Localizable.strings */; };
+		FDA1E2E42B7B921D00DC909A /* UKWebViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1E2E32B7B921D00DC909A /* UKWebViewExtension.swift */; };
+		FDA1E2E52B7B921D00DC909A /* UKWebViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA1E2E32B7B921D00DC909A /* UKWebViewExtension.swift */; };
 		FDC0645E2AC9650E00DF04F8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC0645D2AC9650E00DF04F8 /* Home.storyboard */; };
 		FDC0645F2AC9650E00DF04F8 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC0645D2AC9650E00DF04F8 /* Home.storyboard */; };
 		FDC064612AC9652400DF04F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC064602AC9652400DF04F8 /* HomeViewController.swift */; };
@@ -182,6 +184,7 @@
 		FD98D9EF2AC9B05800445B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD98D9FF2AC9B20100445B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FD98DA012AC9B21B00445B20 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FDA1E2E32B7B921D00DC909A /* UKWebViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKWebViewExtension.swift; sourceTree = "<group>"; };
 		FDC0645D2AC9650E00DF04F8 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FDC064602AC9652400DF04F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDC064652AC9799400DF04F8 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
@@ -541,6 +544,7 @@
 				FD1743FB2AE3981E0049E21F /* UIAlertControllerExtension.swift */,
 				FD1743FE2AE3985E0049E21F /* ErrorExtension.swift */,
 				FD1744082AE3C4DC0049E21F /* BundleExtension.swift */,
+				FDA1E2E32B7B921D00DC909A /* UKWebViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1152,6 +1156,7 @@
 				FD4413CA2B5818F4001FD830 /* R.generated.swift in Sources */,
 				FD4413CD2B582E2F001FD830 /* HomeViewModel.swift in Sources */,
 				FDD6E6CC2AC9499600C61E41 /* TopValue.xcdatamodeld in Sources */,
+				FDA1E2E42B7B921D00DC909A /* UKWebViewExtension.swift in Sources */,
 				FDC0648D2AC97E2600DF04F8 /* BaseViewController.swift in Sources */,
 				FD1743FC2AE3981E0049E21F /* UIAlertControllerExtension.swift in Sources */,
 				FD1743F32AE37D140049E21F /* MainInteractor.swift in Sources */,
@@ -1211,6 +1216,7 @@
 				FD4413CB2B5818F4001FD830 /* R.generated.swift in Sources */,
 				FD4413CE2B582E2F001FD830 /* HomeViewModel.swift in Sources */,
 				FDD6E6F72AC949BF00C61E41 /* TopValue.xcdatamodeld in Sources */,
+				FDA1E2E52B7B921D00DC909A /* UKWebViewExtension.swift in Sources */,
 				FDC0648E2AC97E2600DF04F8 /* BaseViewController.swift in Sources */,
 				FD1743FD2AE3981E0049E21F /* UIAlertControllerExtension.swift in Sources */,
 				FD1743F42AE37D140049E21F /* MainInteractor.swift in Sources */,
@@ -1413,7 +1419,7 @@
 				CODE_SIGN_ENTITLEMENTS = TopValue/TopValue.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopValue/Production/Info.plist;
@@ -1448,7 +1454,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TopValue/TopValueRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopValue/Production/Info.plist;

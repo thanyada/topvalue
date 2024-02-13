@@ -12,7 +12,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
 
     @IBOutlet weak var mainTabbar: CustomTabBar!
     private var interactor: MainInteractor?
-    private var viewModel: MainViewModel?
+    private var viewModel: MainViewModel = MainViewModel()
     private var disposeBag: DisposeBag = DisposeBag()
     
     private struct Constants {
@@ -23,8 +23,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         viewModel = MainViewModel()
-        guard let vm = viewModel else { return }
-        interactor = MainInteractor(viewModel: vm)
+        interactor = MainInteractor(viewModel: viewModel)
     }
     
     override func viewDidLoad() {
@@ -34,8 +33,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         setupTิabbarTitle()
         setTabbarImage()
         setFont()
-        guard let vm = viewModel else { return }
-        bind(vm, disposeBag)
+        bind(viewModel, disposeBag)
         fetchBadgeCartCouting()
         fetchBadgeWishListCouting()
         setupBinding()
@@ -58,7 +56,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     
     
     private func setupBinding() {
-        viewModel?
+        viewModel
             .badgeCartModel
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
@@ -76,7 +74,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             })
             .disposed(by: self.disposeBag)
         
-        viewModel?
+        viewModel
             .badgeWishlistModel
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
@@ -142,12 +140,14 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     @objc private func fetchCartData() {
+        self.removeBadge(index: 2)
+        self.removeBadge(index: 3)
         fetchBadgeCartCouting()
         fetchBadgeWishListCouting()
     }
     
     @objc private func removeAllBadgeData() {
-        badgeRemoveAll()
+        fetchCartData()
     }
     
     @objc private func updateRedBar() {
@@ -165,9 +165,6 @@ extension MainViewController {
     private func fetchBadgeWishListCouting() {
         interactor?.fetchBadgeWishlistModel()
             .disposed(by: self.disposeBag)
-    }
-    private func badgeRemoveAll() {
-        interactor?.removeAllBadge()
     }
    
 }

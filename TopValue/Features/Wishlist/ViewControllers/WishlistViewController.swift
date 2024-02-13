@@ -68,6 +68,7 @@ class WishlistViewController: BaseViewController {
     @objc private func handleTabbarDidSelected(_ notification: Notification) {
         if let userInfo = notification.userInfo, let selectedIndex = userInfo["selectedIndex"] as? Int {
             self.wishlistViewModel.currentIndex.accept(selectedIndex)
+            self.showTabBar()
         }
     }
 }
