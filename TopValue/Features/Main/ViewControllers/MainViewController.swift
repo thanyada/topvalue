@@ -24,6 +24,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
         super.awakeFromNib()
         viewModel = MainViewModel()
         interactor = MainInteractor(viewModel: viewModel)
+        additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: -30, right: 0)
     }
     
     override func viewDidLoad() {
@@ -96,6 +97,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
     private func setupBase() {
         CustomTabBar.appearance().shadowImage = UIImage()
         CustomTabBar.appearance().backgroundImage = UIImage()
+        mainTabbar.clipsToBounds = true
         mainTabbar.backgroundColor = .white
         mainTabbar.tintAdjustmentMode = .normal
         mainTabbar.itemPositioning = .centered

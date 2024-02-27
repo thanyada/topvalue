@@ -60,14 +60,21 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
         baseWebView.snp.makeConstraints { make in
             make.left.equalTo(self.view)
             make.right.equalTo(self.view)
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            make.top.equalTo(self.view)
+            make.bottom.equalTo(self.view)
         }
         self.webView.navigationDelegate = self
         self.webView = webView
         baseWebView.addSubview(webView)
         self.webView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalToSuperview()
+            make.right.left.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            let hasSafeArea = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0 > 0
+            if hasSafeArea {
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            } else {
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(-34)
+            }
         }
         webView.navigationDelegate = self
         webView.addObserver(self, forKeyPath: "URL", options: .new, context: nil)
