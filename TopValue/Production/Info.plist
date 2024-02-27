@@ -32,14 +32,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>api</key>
 	<dict>
 		<key>host</key>
 		<string>https://api.topvalue.com/rest/V1</string>
 	</dict>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleDarkContent</string>
 </dict>
 </plist>
