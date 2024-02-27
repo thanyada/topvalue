@@ -61,7 +61,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
                 guard let self = self, let badgeCardCount = model?.badgeCartCouting, badgeCardCount > 0 else {
-                    self?.removeBadge(index: 3)
+                    self?.hiddenBadge(index: 3)
                     return
                 }
                 self.addBadge(
@@ -79,7 +79,7 @@ class MainViewController: UITabBarController, UITabBarControllerDelegate {
             .asDriver(onErrorJustReturn: nil)
             .drive(onNext: { [weak self] model in
                 guard let self = self, let badgeWishlistCount = model?.badgeWishlistCount, badgeWishlistCount > 0 else {
-                    self?.removeBadge(index: 2)
+                    self?.hiddenBadge(index: 2)
                     return
                 }
                 self.addBadge(index: 2,

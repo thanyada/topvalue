@@ -7,13 +7,6 @@
 
 import Foundation
 class BaseViewModel {
-//    struct ActionType {
-//        static let clickHomeButton = "clickHomeButton"
-//        static let clickCartButton = "clickCartButton"
-//        static let clickWishListButton = "clickWishListButton"
-//        static let clickCategoryButton = "clickCategoryButton"
-//        static let clickAccountButton = "clickAccountButton"
-//    }
     enum ActionType: String {
         case clickHomeButton = "clickHomeButton"
         case clickCartButton = "clickCartButton"

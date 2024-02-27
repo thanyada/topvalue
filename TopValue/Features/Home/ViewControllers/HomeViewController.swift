@@ -31,6 +31,10 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     private func createBinding() {
         NotificationCenter
             .default
@@ -59,6 +63,15 @@ class HomeViewController: BaseViewController {
                 object: nil
             )
         
+        NotificationCenter
+            .default
+            .addObserver(
+                self,
+                selector: #selector(updateView),
+                name: NSNotification.Name(rawValue: "updateView"),
+                object: nil
+            )
+        
         homeViewModel
             .currentIndex
             .subscribe(onNext: { [weak self] currentIndex in
@@ -71,7 +84,7 @@ class HomeViewController: BaseViewController {
     }
     
     private func movetoBasePath() {
-        guard let url = URL(string: path) else { return }
+        guard let url = URL(string: path), webView.currentURL()?.absoluteString != path else { return }
         let request = URLRequest(url: url)
         webView.load(request)
     }
@@ -82,12 +95,18 @@ class HomeViewController: BaseViewController {
     
     @objc private func updateLogoutSuccess() {
         isLogin = false
+        LocalModel.shared.updateAutoLoginState(state: false)
+        movetoBasePath()
     }
     
     @objc private func handleTabbarDidSelected(_ notification: Notification) {
         if let userInfo = notification.userInfo, let selectedIndex = userInfo["selectedIndex"] as? Int {
             self.homeViewModel.currentIndex.accept(selectedIndex)
         }
+    }
+    
+    @objc private func updateView() {
+        movetoBasePath()
     }
     
     func config(request: String) {
@@ -98,17 +117,6 @@ class HomeViewController: BaseViewController {
         guard let url = URL(string: request) else { return }
         let request = URLRequest(url: url)
         webView.load(request)
-        guard let token = UserDefaults.standard.string(forKey: "userLoginToken") else { return }
-        self.sentAutoLoginToWeb(token: token)
-    }
-    
-    private func sentAutoLoginToWeb(token: String) {
-        let script = "autoLogin('\(token)');"
-        webView.evaluateJavaScript(script) { _, error in
-            if let error = error {
-                print("JavaScript evaluation error: \(error.localizedDescription)")
-            }
-        }
     }
 }
 

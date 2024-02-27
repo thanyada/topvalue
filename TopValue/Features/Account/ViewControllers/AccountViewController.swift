@@ -10,7 +10,7 @@ import WebKit
 import GoogleSignIn
 import AuthenticationServices
 
-class AccountViewController: BaseViewController {//, WKNavigationDelegate {
+class AccountViewController: BaseViewController {
     
     @IBOutlet private weak var webContainner: UIView!
     var path: String = ApplicationFlag.accountPath
@@ -26,6 +26,7 @@ class AccountViewController: BaseViewController {//, WKNavigationDelegate {
         super.viewDidLoad()
         config(request: path)
         createBinding()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +41,8 @@ class AccountViewController: BaseViewController {//, WKNavigationDelegate {
         guard let url = URL(string: request) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 10.0)
         webView.load(request)
+//        guard let token = UserDefaults.standard.string(forKey: "userLoginToken") else { return }
+//        self.sentAutoLoginToWeb(token: token)
     }
     
     private func createBinding() {
@@ -73,6 +76,8 @@ class AccountViewController: BaseViewController {//, WKNavigationDelegate {
             self.accountViewModel.currentIndex.accept(selectedIndex)
         }
     }
+    
+   
 }
 
 

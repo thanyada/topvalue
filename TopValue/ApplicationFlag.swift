@@ -23,4 +23,5 @@ struct ApplicationFlag {
 //    static let categoryPath = "https://topvalue.com/m/categories"
 //    static let homePagePath = "https://topvalue.com/"
 //    #endif
+    var isAutoLoginSuccess: Bool = false
 }

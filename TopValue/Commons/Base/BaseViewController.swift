@@ -20,6 +20,7 @@ class BaseViewController: UIViewController, WKNavigationDelegate {
     var viewModel = BaseViewModel()
     var actionType: BaseViewModel.ActionType?
     let baseWebView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -170,6 +171,13 @@ extension BaseViewController: WKScriptMessageHandler{
             hideTabBar()
         }
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard let token = UserDefaults.standard.string(forKey: "userLoginToken"), LocalModel.shared.isAutoLoginSuccess == false else { return }
+        sentAutoLoginToWeb(token: token)
+        LocalModel.shared.updateAutoLoginState(state: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateView"), object: nil)
+    }
 }
 // MARK: - Sign In
 extension BaseViewController {
@@ -201,6 +209,17 @@ extension BaseViewController {
             }
         }
     }
+    func sentAutoLoginToWeb(token: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            let script = "autoLogin('\(token)');"
+            self.webView.evaluateJavaScript(script) { _, error in
+                if let error = error {
+                    print("JavaScript evaluation error: \(error.localizedDescription)")
+                }
+            }
+        })
+    }
+    
 }
 extension BaseViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

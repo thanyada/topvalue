@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,6 +42,8 @@
 		FD4413CB2B5818F4001FD830 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413C92B5818F4001FD830 /* R.generated.swift */; };
 		FD4413CD2B582E2F001FD830 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */; };
 		FD4413CE2B582E2F001FD830 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */; };
+		FD44BE4B2B88E9C900D57676 /* LocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD44BE4A2B88E9C900D57676 /* LocalModel.swift */; };
+		FD44BE4C2B88E9C900D57676 /* LocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD44BE4A2B88E9C900D57676 /* LocalModel.swift */; };
 		FD494BEF2B52C6EA0065FA34 /* AccountViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */; };
 		FD494BF02B52C6EA0065FA34 /* AccountViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */; };
 		FD494BF22B52CC690065FA34 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD494BF12B52CC690065FA34 /* AccountViewModel.swift */; };
@@ -167,6 +169,7 @@
 		FD4413A92B53FE66001FD830 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD4413C92B5818F4001FD830 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FD4413CC2B582E2F001FD830 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FD44BE4A2B88E9C900D57676 /* LocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModel.swift; sourceTree = "<group>"; };
 		FD494BED2B529B5D0065FA34 /* TopValueRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TopValueRelease.entitlements; sourceTree = "<group>"; };
 		FD494BEE2B52C6EA0065FA34 /* AccountViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewRouter.swift; sourceTree = "<group>"; };
 		FD494BF12B52CC690065FA34 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -470,6 +473,7 @@
 			children = (
 				FD1743EF2AE37C080049E21F /* BadgeCartModel.swift */,
 				FD1743F52AE38BE90049E21F /* BadgeWishlistModel.swift */,
+				FD44BE4A2B88E9C900D57676 /* LocalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1172,6 +1176,7 @@
 				FD1743E12AE375080049E21F /* RxServiceManager.swift in Sources */,
 				FD1743F02AE37C080049E21F /* BadgeCartModel.swift in Sources */,
 				FD1743F62AE38BE90049E21F /* BadgeWishlistModel.swift in Sources */,
+				FD44BE4B2B88E9C900D57676 /* LocalModel.swift in Sources */,
 				FDC0647E2AC97BCD00DF04F8 /* AccountViewController.swift in Sources */,
 				FD494BFE2B539BF70065FA34 /* CustomTabBar.swift in Sources */,
 				FDC064842AC97D8300DF04F8 /* WishlistViewController.swift in Sources */,
@@ -1232,6 +1237,7 @@
 				FD1743E22AE375080049E21F /* RxServiceManager.swift in Sources */,
 				FD1743F12AE37C080049E21F /* BadgeCartModel.swift in Sources */,
 				FD1743F72AE38BE90049E21F /* BadgeWishlistModel.swift in Sources */,
+				FD44BE4C2B88E9C900D57676 /* LocalModel.swift in Sources */,
 				FDC0647F2AC97BCD00DF04F8 /* AccountViewController.swift in Sources */,
 				FD494BFF2B539BF70065FA34 /* CustomTabBar.swift in Sources */,
 				FDC064852AC97D8300DF04F8 /* WishlistViewController.swift in Sources */,
@@ -1419,8 +1425,8 @@
 				CODE_SIGN_ENTITLEMENTS = TopValue/TopValue.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 7923CP4VM6;
+				CURRENT_PROJECT_VERSION = 9;
+				DEVELOPMENT_TEAM = 5CAP34C2HW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopValue/Production/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1454,7 +1460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TopValue/TopValueRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7923CP4VM6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TopValue/Production/Info.plist;
